@@ -1,0 +1,7 @@
+{
+  "printWidth": 100,
+  "endOfLine": "crlf",
+  "trailingComma": "all",
+  "objectCurlyNewLine": "on",
+  "tabWidth": 3
+}

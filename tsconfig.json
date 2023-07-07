@@ -1,0 +1,23 @@
+{
+   "compilerOptions": {
+      "downlevelIteration": true,
+      "target": "es2017",
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noFallthroughCasesInSwitch": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "jsx": "react-jsx",
+      "noImplicitAny": false
+   },
+   "include": ["src", "index.tsx", "src/**/*", "custom-request.d.ts"],
+   "exclude": ["node_modules"]
+}
