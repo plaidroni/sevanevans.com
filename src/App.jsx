@@ -17,7 +17,7 @@ import {
    ThumbsRating,
    Grid,
 } from "grommet";
-import { Reactjs, Js, Linkedin, Redo, Mail, Github, Send } from "grommet-icons";
+import { Reactjs, Js, Linkedin, Redo, Mail, Github, Send, Location } from "grommet-icons";
 import theme from "./theme";
 import { StyledSpan } from "./utils/StyledSpan";
 import PostCardLocation from "./components/HelloFromPS";
@@ -48,7 +48,7 @@ const App = () => {
 
             <PageContent pad={{ bottom: "small" }}>
                <Box align="baseline" justify="between" direction="row">
-                  <Box align="start" justify="center">
+                  <Box align="start" justify="center" gap="medium" wrap>
                      <Box
                         align="center"
                         justify="center"
@@ -79,13 +79,23 @@ const App = () => {
                            </Heading>
                         </Box>
                      </Box>
-                     <Box align="center" justify="between" wrap direction="row">
+                     <Box align="start" justify="between" wrap direction="column" gap="small">
                         <Paragraph size="large" margin={{ vertical: "xsmall" }} color="dark-3">
                            Howdy! I'm a <StyledSpan>software developer</StyledSpan> &{" "}
                            <StyledSpan>co-founder of BodyMX</StyledSpan>. I enjoy{" "}
                            <StyledSpan>long walks on the beach</StyledSpan> and dancing{" "}
                            <StyledSpan>Tango!</StyledSpan>
                         </Paragraph>
+                        <Box
+                           align="end"
+                           justify="center"
+                           direction="row"
+                           gap="xsmall"
+                           margin={{ right: "none" }}
+                        >
+                           <Location />
+                           <Text>Palm Springs, California</Text>
+                        </Box>
                      </Box>
                   </Box>
                   <Box align="center" justify="center" flex fill="horizontal">
@@ -202,4 +212,3 @@ const App = () => {
 };
 
 export default App;
-
