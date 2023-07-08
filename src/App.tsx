@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
    Grommet,
    Page,
@@ -17,7 +17,17 @@ import {
    ThumbsRating,
    Grid,
 } from "grommet";
-import { Reactjs, Js, Linkedin, Redo, Mail, Github, Send, Location } from "grommet-icons";
+import {
+   Reactjs,
+   Js,
+   Linkedin,
+   Redo,
+   Mail,
+   Github,
+   Send,
+   Location,
+   ChatOption,
+} from "grommet-icons";
 import theme from "./theme";
 import { StyledHeaderSpan, StyledSpan } from "./utils/StyledSpan";
 import PostCardLocation from "./components/HelloFromPS";
@@ -27,34 +37,58 @@ import ProjectsTable from "./components/ExperienceDataTable";
 import DarkThemeSwitch from "./components/DarkThemeSwitch";
 import { ToastProvider, useToast } from "./utils/ToastUtils";
 import ContactGrid from "./components/ContactGrid";
+import LocationDrop from "./components/LocationDrop";
+import useMediaQuery from "./hooks/UseMediaQuery";
 
 const AppContainer = styled.div`
    position: relative;
 `;
 
 const App = () => {
-   const [contactSevan, setContactSevan] = React.useState();
+   const [contactSevan, setContactSevan] = React.useState(false);
    const [dark, setDark] = React.useState(false);
+
+   // Location Drop
+   const [locationDrop, setLocationDrop] = React.useState(false);
+   const boxRef = useRef<any | null>(null);
+
+   // Mobile page padding
+   const { isMobile } = useMediaQuery();
+   const mobilePad = isMobile ? "medium" : "none";
 
    return (
       <Grommet full theme={theme} themeMode={dark ? "dark" : "light"}>
          <ToastProvider>
             {/* <AppContainer> */}
-            <Page kind="narrow">
-               <Header
-                  align="start"
-                  direction="row"
-                  flex={false}
-                  justify="between"
-                  gap="medium"
-                  pad="xsmall"
-               >
-                  <Heading color="dark-3" margin={{ left: "small", top: "none" }} size="small">
-                     s<StyledHeaderSpan>evans</StyledHeaderSpan>
-                  </Heading>
-                  <DarkThemeSwitch dark={dark} setDark={setDark} />
-               </Header>
+            <Header
+               align="center"
+               direction="row"
+               flex={false}
+               justify="between"
+               gap="medium"
+               pad="xsmall"
+               sticky="scrollup"
+               style={
+                  dark
+                     ? {
+                          backdropFilter: "blur(5.5px)",
+                          WebkitBackdropFilter: "blur(8.5px)",
+                       }
+                     : {
+                          background: "rgba(255, 255, 255, 0.3)",
+                          backdropFilter: "blur(5.5px)",
+                          WebkitBackdropFilter: "blur(8.5px)",
+                          border: "1px solid rgba(255, 255, 255, 0.18)",
+                       }
+               }
+            >
+               <Heading color="dark-3" margin={{ left: "small", top: "none" }} size="small">
+                  s<StyledHeaderSpan>evans</StyledHeaderSpan>
+               </Heading>
+               <DarkThemeSwitch dark={dark} setDark={setDark} />
+            </Header>
 
+            <Page kind="narrow" pad={mobilePad}>
                <PageContent pad={{ bottom: "small" }}>
                   <Box align="baseline" justify="between" direction="row">
                      <Box align="start" justify="center" gap="medium" wrap>
@@ -71,7 +105,7 @@ const App = () => {
                               justify="center"
                               overflow="hidden"
                               round="full"
-                              size="xlarge"
+                              size="2xl"
                               src="https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/profilePictures%2FW0xdrFJk8BPiLv93iwv5n7sZleH2?alt=media&token=fd5d2a17-462f-4350-ba6c-6fa10c3b47e9"
                            />
                            <Box align="start" justify="start" fill>
@@ -106,15 +140,45 @@ const App = () => {
                               direction="row"
                               gap="xsmall"
                               margin={{ right: "none" }}
+                              onClick={() => setLocationDrop(true)}
+                              ref={boxRef}
+                              focusIndicator={false}
+                              hoverIndicator
+                              pad="xsmall"
+                              round="xsmall"
                            >
                               <Location />
-                              <Text>Palm Springs, California</Text>
+                              <Paragraph color="text-paragraph" margin="none">
+                                 I'm in{" "}
+                                 <Text weight="bold">
+                                    <StyledSpan>Palm Springs, California!</StyledSpan>
+                                 </Text>
+                              </Paragraph>
                            </Box>
                         </Box>
+                        {isMobile && (
+                           <Box
+                              align="center"
+                              justify="center"
+                              flex
+                              fill="horizontal"
+                              margin={{ vertical: "small" }}
+                              focusIndicator={false}
+                           >
+                              <Button
+                                 primary
+                                 icon={<ChatOption />}
+                                 label="let's talk"
+                                 onClick={() => setContactSevan(true)}
+                              />
+                           </Box>
+                        )}
                      </Box>
-                     <Box align="center" justify="center" flex fill="horizontal">
-                        <Anchor label="let's talk" onClick={() => setContactSevan(true)} />
-                     </Box>
+                     {!isMobile && (
+                        <Box align="center" justify="center" flex fill="horizontal">
+                           <Anchor label="let's talk" onClick={() => setContactSevan(true)} />
+                        </Box>
+                     )}
                   </Box>
                   <Box
                      align="center"
@@ -176,6 +240,13 @@ const App = () => {
                   </Box>
                </PageContent>
                {contactSevan && <ContactLayer setContactSevan={setContactSevan} />}
+               {locationDrop && (
+                  <LocationDrop
+                     setLocationDrop={setLocationDrop}
+                     locationDrop={locationDrop}
+                     boxRef={boxRef}
+                  />
+               )}
             </Page>
             {/* <PostCardLocation /> */}
             {/* </AppContainer> */}

@@ -5,7 +5,13 @@ import React from "react";
 
 const ContactLayer = ({ setContactSevan }) => {
    return (
-      <Layer onClickOutside={() => setContactSevan(false)} animate modal>
+      <Layer
+         onClickOutside={() => setContactSevan(false)}
+         animate
+         modal
+         responsive={false}
+         margin="xsmall"
+      >
          <Box align="center" justify="center" pad="xsmall" gap="small" width="large">
             <Box
                direction="row"

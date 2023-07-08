@@ -48,6 +48,7 @@ const SelectLayer = ({ project, setSelectedProject }) => {
       <Layer
          animate
          modal={true}
+         responsive={false}
          full="vertical"
          position="right"
          onEsc={() => setSelectedProject(null)}
