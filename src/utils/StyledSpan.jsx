@@ -1,5 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { normalizeColor } from "grommet/utils";
 
 export const StyledSpan = styled.span`
-   color: #3b3b3b; // change color to highlight
+   ${({ theme }) => css`
+      color: ${normalizeColor("text-paragraph-highlight", theme)};
+   `}
+`;
+
+export const StyledHeaderSpan = styled.span`
+   color: #313131;
 `;

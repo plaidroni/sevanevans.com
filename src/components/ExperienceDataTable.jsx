@@ -102,20 +102,28 @@ const ProjectsTable = () => {
       {
          name: "BodyMX",
          url: "thebodymx.com",
-         roles: [{ name: "Co-Founder", color: { color: "neutral-2", opacity: "strong" } }],
+         roles: [{ name: "Co-Founder", color: { color: "co-founder", opacity: "strong" } }],
          period: "Sept 2022 - Present",
       },
       {
          name: "Tigase, Inc",
          url: "tigase.net",
-         roles: [{ name: "Software Engineer", color: { color: "neutral-3", opacity: "strong" } }],
+         roles: [
+            { name: "Software Engineer", color: { color: "software-engineer", opacity: "strong" } },
+         ],
          period: "Jan 2021 - Present",
       },
       {
          name: "RCPC Hackathon",
          url: "",
-         roles: [{ name: "1st Place", color: { color: "neutral-1", opacity: "strong" } }],
+         roles: [{ name: "1st Place", color: { color: "1st-place", opacity: "strong" } }],
          period: "Apr 2020",
+      },
+      {
+         name: "PDHS Official Application",
+         url: "",
+         roles: [{ name: "Collaborator", color: { color: "collaborator", opacity: "strong" } }],
+         period: "Dec 2019",
       },
    ];
    const [selectedProject, setSelectedProject] = React.useState(null);

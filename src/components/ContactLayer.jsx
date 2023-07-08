@@ -1,5 +1,5 @@
 import { Layer, Box, Text, TextInput, TextArea, Button } from "grommet";
-import { Send } from "grommet-icons";
+import { Down, Send } from "grommet-icons";
 
 import React from "react";
 
@@ -8,12 +8,15 @@ const ContactLayer = ({ setContactSevan }) => {
       <Layer onClickOutside={() => setContactSevan(false)} animate modal>
          <Box align="center" justify="center" pad="xsmall" gap="small" width="large">
             <Box
+               direction="row"
+               gap="small"
                align="start"
-               justify="center"
+               justify="start"
                pad="xsmall"
                fill="horizontal"
                border={{ side: "bottom" }}
             >
+               <Down size="medium" color="border" onClick={() => setContactSevan(false)}></Down>
                <Text>Contact Sevan</Text>
             </Box>
             <Box align="center" justify="center" gap="small" fill="horizontal">
@@ -25,7 +28,7 @@ const ContactLayer = ({ setContactSevan }) => {
                      <TextInput name="Email" placeholder="Email" />
                   </Box>
                </Box>
-               <TextArea placeholder="What's on your mind?" />
+               <TextArea placeholder="What's on your mind?" resize="vertical" />
             </Box>
             <Box align="end" justify="center" fill="horizontal">
                <Button label="Send it" icon={<Send />} primary />

@@ -6,8 +6,8 @@ const theme = {
    global: {
       colors: {
          brand: {
-            dark: "#3E92CC",
-            light: "#2A628F",
+            dark: "#8D3B72",
+            light: "#8D3B72",
          },
          background: {
             dark: "#111111",
@@ -41,15 +41,29 @@ const theme = {
             dark: "#999999",
             light: "#666666",
          },
+         "text-paragraph-highlight": {
+            dark: "#fffff0",
+            light: "#3b3b3b",
+         },
+         "text-paragraph": {
+            dark: "#c9c9c9",
+            light: "#6e6e6e",
+         },
          border: {
             dark: "#444444",
             light: "#CCCCCC",
          },
+         "co-founder": "#8D3B72",
+         collaborator: "#8A7090",
+         "1st-place": "#8C5681",
+         "software-engineer": "#8D497A",
+
          control: "brand",
          "active-background": "background-contrast",
          "active-text": "text-strong",
          "selected-background": "brand",
          "selected-text": "text-strong",
+         "status-normal": "#FFFFF0",
          "status-critical": "#FF4040",
          "status-warning": "#FFAA15",
          "status-ok": "#00C781",
