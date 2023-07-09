@@ -29,7 +29,7 @@ import {
    ChatOption,
 } from "grommet-icons";
 import theme from "./theme";
-import { StyledHeaderSpan, StyledSpan } from "./utils/StyledSpan";
+import { EvansSpan, StyledHeaderSpan, StyledSpan } from "./utils/StyledSpan";
 import PostCardLocation from "./components/HelloFromPS";
 import styled from "styled-components";
 import ContactLayer from "./components/ContactLayer";
@@ -40,6 +40,7 @@ import ContactGrid from "./components/ContactGrid";
 import LocationDrop from "./components/LocationDrop";
 import useMediaQuery from "./hooks/UseMediaQuery";
 import TechnologyStack from "./components/TechnologyStack";
+import DancingImage from "./components/DancingEasterEgg";
 
 const AppContainer = styled.div`
    position: relative;
@@ -53,9 +54,14 @@ const App = () => {
    const [locationDrop, setLocationDrop] = React.useState(false);
    const boxRef = useRef<any | null>(null);
 
-   // Mobile page padding
+   // Mobile page padding & sizing
    const { isMobile } = useMediaQuery();
-   const mobilePad = isMobile ? "medium" : "none";
+   const mobilePad = isMobile ? "large" : "none";
+   const mobileHeading = isMobile ? "large" : "medium";
+   const mobileHeadingLevel = isMobile ? 2 : 3;
+
+   // Dancing Easteregg
+   const [dancing, setDancing] = React.useState(false);
 
    return (
       <Grommet full theme={theme} themeMode={dark ? "dark" : "light"}>
@@ -83,14 +89,14 @@ const App = () => {
                        }
                }
             >
-               <Heading color="dark-3" margin={{ left: "small", top: "none" }} size="small">
-                  s<StyledHeaderSpan>evans</StyledHeaderSpan>
+               <Heading color="collaborator" margin={{ left: "small", top: "none" }} size="small">
+                  s<EvansSpan>evans</EvansSpan>
                </Heading>
                <DarkThemeSwitch dark={dark} setDark={setDark} />
             </Header>
 
-            <Page kind="narrow" pad={mobilePad}>
-               <PageContent pad={{ bottom: "small" }}>
+            <Page kind="narrow">
+               <PageContent pad={mobilePad}>
                   <Box align="baseline" justify="between" direction="row">
                      <Box align="start" justify="center" gap="medium" wrap>
                         <Box
@@ -189,7 +195,11 @@ const App = () => {
                      gap="medium"
                   >
                      <Box align="start" justify="center" fill="horizontal">
-                        <Heading level="3" margin={{ vertical: "small" }} size="medium">
+                        <Heading
+                           level={mobileHeadingLevel}
+                           margin={{ vertical: "small" }}
+                           size="medium"
+                        >
                            Work
                         </Heading>
 
@@ -213,7 +223,7 @@ const App = () => {
                         </Paragraph>
                      </Box>
                   </Box>
-                  <Heading level="3" size="medium">
+                  <Heading level={mobileHeadingLevel} size="medium">
                      Experience
                   </Heading>
                   <ProjectsTable />
@@ -227,7 +237,11 @@ const App = () => {
                      gap="medium"
                   >
                      <Box align="start" justify="center" fill="horizontal">
-                        <Heading level="3" margin={{ vertical: "small" }} size="medium">
+                        <Heading
+                           level={mobileHeadingLevel}
+                           margin={{ vertical: "small" }}
+                           size="medium"
+                        >
                            Contact
                         </Heading>
                         <Paragraph
@@ -251,6 +265,7 @@ const App = () => {
                      boxRef={boxRef}
                   />
                )}
+               {dancing && <DancingImage />}
             </Page>
             {/* <PostCardLocation /> */}
             {/* </AppContainer> */}

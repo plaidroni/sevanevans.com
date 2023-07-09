@@ -19,7 +19,7 @@ function ContactGrid({ setContactSevan }) {
          <Box
             align="center"
             justify="between"
-            width="350px"
+            width={{ min: "350px", max: "fill" }}
             height="xxsmall"
             background={{ color: "graph-3", opacity: "strong" }}
             pad="small"
@@ -46,7 +46,7 @@ function ContactGrid({ setContactSevan }) {
          <Box
             align="center"
             justify="between"
-            width="350px"
+            width={{ min: "350px", max: "fill" }}
             height="xxsmall"
             background={{ color: "neutral-4", opacity: "strong" }}
             pad="small"
@@ -65,7 +65,7 @@ function ContactGrid({ setContactSevan }) {
          <Box
             align="center"
             justify="between"
-            width="350px"
+            width={{ min: "350px", max: "fill" }}
             height="xxsmall"
             background={{ color: "dark-2", opacity: "strong" }}
             pad="small"
