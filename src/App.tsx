@@ -153,13 +153,15 @@ const App = () => {
                               hoverIndicator
                               pad="xsmall"
                               round="xsmall"
+                              border
                            >
                               <Location />
                               <Paragraph color="text-paragraph" margin="none">
                                  I'm in{" "}
                                  <Text weight="bold">
                                     <StyledSpan>Palm Springs, California!</StyledSpan>
-                                 </Text>
+                                 </Text>{" "}
+                                 <Text size="small">USA</Text>
                               </Paragraph>
                            </Box>
                         </Box>
