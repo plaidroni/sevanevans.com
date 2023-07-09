@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, DataTable, Text, Layer, Heading, Drop, Grid, Paragraph } from "grommet";
-import { Link, Calendar, List, Technology, Menu } from "grommet-icons";
+import { Link, Calendar, List, Technology, Menu, Grommet } from "grommet-icons";
 import styled from "styled-components";
 
 import {
@@ -22,6 +22,7 @@ import {
    AndroidStudio,
    Express,
    MongoDB,
+   Firebase,
 } from "../utils/TechnologySVGList";
 import { TechIcon, TechIconProps } from "./TechnologyStack";
 
@@ -205,6 +206,8 @@ const ProjectsTable = () => {
             { name: "Typescript", icon: <Typescript /> },
             { name: "Javascript", icon: <Javascript /> },
             { name: "CSS", icon: <CSS /> },
+            { name: "Firebase", icon: <Firebase /> },
+            { name: "Grommet", icon: <Grommet /> },
             { name: "MongoDB", icon: <MongoDB /> },
             { name: "NodeJS", icon: <NodeJS /> },
             { name: "Heroku", icon: <Heroku /> },
@@ -228,17 +231,29 @@ const ProjectsTable = () => {
             { name: "XCode", icon: <XCode /> },
             { name: "AndroidStudio", icon: <AndroidStudio /> },
          ],
-         description: `• Currently working in Kotlin & Swift to create multi-platform applications on Android, iOS, MacOS, and Windows
-         • Excelling at adapting to emerging technologies, and quickly picking up new concepts
-         • Collaborating with graphic designers in order to produce eye-catching illustrations
-         • Designing visual layout mockups using Adobe Photoshop, and Illustrator
-         • Creating & overhauling application UX to appeal to modern standards as well as attract new audiences`,
+         description: `I am currently excelling in the creation of multi-platform applications using Kotlin and Swift for platforms including Android, iOS, MacOS, and Windows. My strengths lie in adapting swiftly to emerging technologies and grasping new concepts at a rapid pace. I have been working in close collaboration with graphic designers, which has empowered us to produce eye-catching illustrations. Furthermore, my work extends to the design of visual layout mockups, utilizing tools such as Adobe Photoshop and Illustrator. Notably, I am deeply involved in creating and overhauling application user experiences to align with modern standards, thereby successfully attracting new audiences.`,
       },
+      // {
+      //    name: "sevanevans.com",
+      //    url: "sevanevans.com",
+      //    roles: [{ name: "Project", color: { color: "software-engineer", opacity: "strong" } }],
+      //    period: "July 2023",
+      //    techStack: [
+      //       { name: "Typescript", icon: <Typescript /> },
+      //       { name: "Javascript", icon: <Javascript /> },
+      //       { name: "CSS", icon: <CSS /> },
+      //       { name: "React", icon: <ReactIcon /> },
+      //    ],
+      //    description: ``,
+      // },
       {
          name: "PDHS Official Application",
          url: "",
-         roles: [{ name: "Collaborator", color: { color: "collaborator", opacity: "strong" } }],
-         period: "Dec 2019",
+         roles: [
+            { name: "Collaborator", color: { color: "collaborator", opacity: "strong" } },
+            { name: "Software Engineer", color: { color: "software-engineer", opacity: "strong" } },
+         ],
+         period: "2019",
          techStack: [
             { name: "Java", icon: <Java /> },
             { name: "Swift", icon: <Swift /> },
@@ -262,6 +277,19 @@ const ProjectsTable = () => {
          description: `I had the thrilling experience of being part of the winning team at the 2019 RSPC Hackathon, a fast-paced 2-hour competition that pushed our abilities to their limits. We chose Java, a language we were confident and skilled in to do the competition in.
 
          The challenge was not just in coding, but in developing an innovative solution within a very limited time frame. Despite the pressures of time, we successfully solved all problems set in front of us with flying colors. Our win was not just a testament to our technical abilities in Java, but also our team coordination, quick decision-making, and capacity to innovate under pressure.`,
+      },
+      {
+         name: "Desert Art Academy",
+         url: "",
+         roles: [
+            {
+               name: "Software Developer",
+               color: { color: "software-engineer", opacity: "strong" },
+            },
+         ],
+         period: "2018",
+         techStack: [{ name: "Java", icon: <Java /> }],
+         description: ``,
       },
    ];
    const [selectedProject, setSelectedProject] = React.useState(null);

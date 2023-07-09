@@ -2,18 +2,29 @@ import { Layer, Box, Text, TextInput, TextArea, Button } from "grommet";
 import { Down, Send } from "grommet-icons";
 import React from "react";
 import emailjs from "emailjs-com";
+import { useToast } from "../utils/ToastUtils";
 
 const ContactLayer = ({ setContactSevan }) => {
+   const { showToast } = useToast();
+
+   const handleToastNotif = (alertLevel, label, description, duration) => {
+      showToast({
+         alertLevel: alertLevel,
+         label: label,
+         description: description,
+         duration: duration,
+      });
+   };
    function sendEmail(e) {
       e.preventDefault();
 
       emailjs.sendForm("service_l2l5ura", "template_t6tgs4a", e.target, "b_81Tq3G9AueC0ts4").then(
          (result) => {
-            console.log(result.text);
+            handleToastNotif("info", "Email sent!", "I'll get back to you soon :)", 6500);
             setContactSevan(false);
          },
          (error) => {
-            console.log(error.text);
+            handleToastNotif("critical", "Uh oh..", "Critical error! Try again later.", 6500);
          },
       );
    }
