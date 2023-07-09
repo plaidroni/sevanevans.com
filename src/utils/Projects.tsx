@@ -36,7 +36,9 @@ export const projects = [
          { name: "Express", icon: <Express /> },
       ],
       img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2Fimageedit_6_6528806410.png?alt=media&token=d171f856-e3e4-4af4-aa12-27c83b674d86",
-      description: "",
+      description: `As the Co-founder and Software Engineer of BodyMX, I've been creating a comprehensive digital platform that seamlessly connects fitness enthusiasts with trainers and wellness resources. Through innovation and determination, I've guided our team in designing an intuitive, responsive, and effective suite of fitness tools that benefit both users and professionals in the industry.
+      
+      In the creation of our website and mobile application, I leveraged a robust tech stack including React and TypeScript, alongside other cutting-edge technologies. React's reusable components and virtual DOM helped us craft a highly interactive user interface that not only runs smoothly but also makes for a delightful user experience. TypeScript, with its static typing, empowered us with better maintainability and debugging capabilities, resulting in safer and more reliable software.`,
    },
    {
       name: "Tigase, Inc",
