@@ -171,7 +171,13 @@ const SelectLayer = ({ project, setSelectedProject }) => {
                      <Text>Link</Text>
                   </Box>
                   <Box align="center" justify="center" wrap>
-                     <Anchor href={project.url}>{project.url}</Anchor>
+                     <Anchor
+                        onClick={() => {
+                           window.open("https://www." + project.url);
+                        }}
+                     >
+                        {project.url}
+                     </Anchor>
                   </Box>
                </Box>
                <Box align="start" justify="between" fill="horizontal" direction="row" pad="small">

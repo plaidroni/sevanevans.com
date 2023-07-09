@@ -1,11 +1,12 @@
 import { Layer, Box, Text, TextInput, TextArea, Button } from "grommet";
-import { Down, Send } from "grommet-icons";
+import { Down, Send, User, MailOption } from "grommet-icons";
 import React from "react";
 import emailjs from "emailjs-com";
 import { useToast } from "../utils/ToastUtils";
 
 const ContactLayer = ({ setContactSevan }) => {
    const { showToast } = useToast();
+   const [submitting, setSubmitting] = React.useState(false);
 
    const handleToastNotif = (alertLevel, label, description, duration) => {
       showToast({
@@ -20,10 +21,12 @@ const ContactLayer = ({ setContactSevan }) => {
 
       emailjs.sendForm("service_l2l5ura", "template_t6tgs4a", e.target, "b_81Tq3G9AueC0ts4").then(
          (result) => {
+            setSubmitting(false);
             handleToastNotif("info", "Email sent!", "I'll get back to you soon :)", 6500);
             setContactSevan(false);
          },
          (error) => {
+            setSubmitting(false);
             handleToastNotif("critical", "Uh oh..", "Critical error! Try again later.", 6500);
          },
       );
@@ -54,16 +57,38 @@ const ContactLayer = ({ setContactSevan }) => {
                <Box align="center" justify="center" gap="small" fill="horizontal">
                   <Box align="start" justify="start" direction="row" gap="small" fill="horizontal">
                      <Box align="center" justify="center">
-                        <TextInput name="name" placeholder="Name" />
+                        <TextInput
+                           icon={<User />}
+                           name="from_name"
+                           id="from_name"
+                           placeholder="Name"
+                        />
                      </Box>
                      <Box align="center" justify="center">
-                        <TextInput type="email" name="email" placeholder="Email" />
+                        <TextInput
+                           icon={<MailOption />}
+                           name="from_email"
+                           id="from_email"
+                           placeholder="Email"
+                        />
                      </Box>
                   </Box>
-                  <TextArea name="message" placeholder="What's on your mind?" resize="vertical" />
+                  <TextArea
+                     name="message"
+                     id="message"
+                     placeholder="What's on your mind?"
+                     resize="vertical"
+                  />
                </Box>
                <Box align="end" justify="center" fill="horizontal">
-                  <Button type="submit" label="Send it" icon={<Send />} primary />
+                  <Button
+                     type="submit"
+                     label="Send it"
+                     icon={<Send />}
+                     primary
+                     busy={submitting}
+                     onClick={() => setSubmitting(true)}
+                  />
                </Box>
             </Box>
          </form>
