@@ -39,6 +39,7 @@ import { ToastProvider, useToast } from "./utils/ToastUtils";
 import ContactGrid from "./components/ContactGrid";
 import LocationDrop from "./components/LocationDrop";
 import useMediaQuery from "./hooks/UseMediaQuery";
+import TechnologyStack from "./components/TechnologyStack";
 
 const AppContainer = styled.div`
    position: relative;
@@ -200,10 +201,11 @@ const App = () => {
                         >
                            With a love for <StyledSpan>coding</StyledSpan> rivaled only by my love
                            for
-                           <StyledSpan> coffee</StyledSpan>, I've spent a decade turning caffeine
-                           and code into innovative <StyledSpan>software solutions</StyledSpan>. I
-                           take pride in <StyledSpan>crafting user experiences</StyledSpan> that
-                           simplify complexity, foster engagement, and{" "}
+                           <StyledSpan> coffee</StyledSpan>, I've spent a{" "}
+                           <StyledSpan>decade</StyledSpan> turning caffeine and code into innovative{" "}
+                           <StyledSpan>software solutions</StyledSpan>. I take pride in{" "}
+                           <StyledSpan>crafting user experiences</StyledSpan> that simplify
+                           complexity, foster engagement, and{" "}
                            <StyledSpan>enhance overall usability</StyledSpan>. Striking a balance
                            between aesthetics, functionality, and user-centric principles, my work
                            symbolizes the essence of{" "}
@@ -215,6 +217,8 @@ const App = () => {
                      Experience
                   </Heading>
                   <ProjectsTable />
+                  <TechnologyStack />
+
                   <Box
                      align="center"
                      justify="center"
