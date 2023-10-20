@@ -96,7 +96,7 @@ const App = () => {
             </Header>
 
             <Page kind="narrow">
-               <PageContent pad={mobilePad}>
+               <PageContent pad={mobilePad} flex="grow">
                   <Box align="baseline" justify="between" direction="row">
                      <Box align="start" justify="center" gap="medium" wrap>
                         <Box
