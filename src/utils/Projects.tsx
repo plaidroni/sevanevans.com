@@ -19,6 +19,21 @@ import {
 
 export const projects = [
    {
+      name: "Quick Draw Development",
+      url: "www.quickdrawdevelopment.com",
+      roles: [
+         { name: "Software Engineer", color: { color: "software-engineer", opacity: "strong" } },
+      ],
+      period: "Jan 2024 - Present",
+      techStack: [
+         { name: "Typescript", icon: <Typescript /> },
+         { name: "CSS", icon: <CSS /> },
+         { name: "React", icon: <ReactIcon /> },
+      ],
+      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2F1631314671583.jpg?alt=media&token=afb5fa5f-2776-4a02-9053-61c2b79498aa",
+      description: ``,
+   },
+   {
       name: "BodyMX",
       url: "thebodymx.com",
       roles: [{ name: "Co-Founder", color: { color: "co-founder", opacity: "strong" } }],
