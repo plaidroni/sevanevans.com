@@ -19,8 +19,8 @@ import {
 
 export const projects = [
    {
-      name: "Quick Draw Development",
-      url: "www.quickdrawdevelopment.com",
+      name: "Quick Draw",
+      url: "quickdrawdevelopment.com",
       roles: [
          { name: "Software Engineer", color: { color: "software-engineer", opacity: "strong" } },
       ],
@@ -122,7 +122,7 @@ export const projects = [
       url: "",
       roles: [
          {
-            name: "Software Developer",
+            name: "Software Engineer",
             color: { color: "software-engineer", opacity: "strong" },
          },
       ],
