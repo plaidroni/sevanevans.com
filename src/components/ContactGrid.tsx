@@ -15,7 +15,7 @@ function ContactGrid({ setContactSevan }) {
       });
    };
    return (
-      <Grid fill="horizontal" gap="small" columns="370px">
+      <Grid fill="horizontal" gap="small" columns="370px" margin={{ bottom: "medium" }}>
          <Box
             align="center"
             justify="between"
