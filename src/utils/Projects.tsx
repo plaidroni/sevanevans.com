@@ -19,43 +19,6 @@ import {
 
 export const projects = [
    {
-      name: "Quick Draw",
-      url: "quickdrawdevelopment.com",
-      roles: [
-         { name: "Software Engineer", color: { color: "software-engineer", opacity: "strong" } },
-      ],
-      period: "Jan 2024 - Present",
-      techStack: [
-         { name: "Typescript", icon: <Typescript /> },
-         { name: "CSS", icon: <CSS /> },
-         { name: "React", icon: <ReactIcon /> },
-      ],
-      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2F1631314671583.jpg?alt=media&token=afb5fa5f-2776-4a02-9053-61c2b79498aa",
-      description: ``,
-   },
-   {
-      name: "BodyMX",
-      url: "thebodymx.com",
-      roles: [{ name: "Co-Founder", color: { color: "co-founder", opacity: "strong" } }],
-      period: "Sept 2022 - Present",
-      techStack: [
-         { name: "Typescript", icon: <Typescript /> },
-         { name: "Javascript", icon: <Javascript /> },
-         { name: "CSS", icon: <CSS /> },
-         { name: "Firebase", icon: <Firebase /> },
-         { name: "Grommet", icon: <Grommet /> },
-         { name: "MongoDB", icon: <MongoDB /> },
-         { name: "NodeJS", icon: <NodeJS /> },
-         { name: "Heroku", icon: <Heroku /> },
-         { name: "React", icon: <ReactIcon /> },
-         { name: "Express", icon: <Express /> },
-      ],
-      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2Fimageedit_6_6528806410.png?alt=media&token=d171f856-e3e4-4af4-aa12-27c83b674d86",
-      description: `As the Co-founder and Software Engineer of BodyMX, I've been creating a comprehensive digital platform that seamlessly connects fitness enthusiasts with trainers and wellness resources. Through innovation and determination, I've guided our team in designing an intuitive, responsive, and effective suite of fitness tools that benefit both users and professionals in the industry.
-      
-      In the creation of our website and mobile application, I leveraged a robust tech stack including React and TypeScript, alongside other cutting-edge technologies. React's reusable components and virtual DOM helped us craft a highly interactive user interface that not only runs smoothly but also makes for a delightful user experience. TypeScript, with its static typing, empowered us with better maintainability and debugging capabilities, resulting in safer and more reliable software.`,
-   },
-   {
       name: "Tigase, Inc",
       url: "tigase.net",
       roles: [
@@ -72,6 +35,44 @@ export const projects = [
       ],
       img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2Fimageedit_4_3824293816.png?alt=media&token=5dae8ad5-30e3-47f3-8198-6c677ca5b07c",
       description: `I am currently excelling in the creation of multi-platform applications using Kotlin and Swift for platforms including Android, iOS, MacOS, and Windows. My strengths lie in adapting swiftly to emerging technologies and grasping new concepts at a rapid pace. I have been working in close collaboration with graphic designers, which has empowered us to produce eye-catching illustrations. Furthermore, my work extends to the design of visual layout mockups, utilizing tools such as Adobe Photoshop and Illustrator. Notably, I am deeply involved in creating and overhauling application user experiences to align with modern standards, thereby successfully attracting new audiences.`,
+   },
+   {
+      name: "Quick Draw",
+      url: "",
+      roles: [
+         { name: "Software Engineer", color: { color: "software-engineer", opacity: "strong" } },
+         { name: "Contract", color: { color: "1st-place", opacity: "strong" } },
+      ],
+      period: "Jan 2024 - Feb 2024",
+      techStack: [
+         { name: "Typescript", icon: <Typescript /> },
+         { name: "CSS", icon: <CSS /> },
+         { name: "React", icon: <ReactIcon /> },
+      ],
+      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2F1631314671583.jpg?alt=media&token=afb5fa5f-2776-4a02-9053-61c2b79498aa",
+      description: ``,
+   },
+   {
+      name: "BodyMX",
+      url: "thebodymx.com",
+      roles: [{ name: "Co-Founder", color: { color: "co-founder", opacity: "strong" } }],
+      period: "Sept 2022 - April 2024",
+      techStack: [
+         { name: "Typescript", icon: <Typescript /> },
+         { name: "Javascript", icon: <Javascript /> },
+         { name: "CSS", icon: <CSS /> },
+         { name: "Firebase", icon: <Firebase /> },
+         { name: "Grommet", icon: <Grommet /> },
+         { name: "MongoDB", icon: <MongoDB /> },
+         { name: "NodeJS", icon: <NodeJS /> },
+         { name: "Heroku", icon: <Heroku /> },
+         { name: "React", icon: <ReactIcon /> },
+         { name: "Express", icon: <Express /> },
+      ],
+      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2Fimageedit_6_6528806410.png?alt=media&token=d171f856-e3e4-4af4-aa12-27c83b674d86",
+      description: `As the Co-founder and Software Engineer of BodyMX, I've been creating a comprehensive digital platform that seamlessly connects fitness enthusiasts with trainers and wellness resources. Through innovation and determination, I've guided our team in designing an intuitive, responsive, and effective suite of fitness tools that benefit both users and professionals in the industry.
+      
+      In the creation of our website and mobile application, I leveraged a robust tech stack including React and TypeScript, alongside other cutting-edge technologies. React's reusable components and virtual DOM helped us craft a highly interactive user interface that not only runs smoothly but also makes for a delightful user experience. TypeScript, with its static typing, empowered us with better maintainability and debugging capabilities, resulting in safer and more reliable software.`,
    },
    // {
    //    name: "sevanevans.com",
