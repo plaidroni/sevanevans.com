@@ -1,4 +1,4 @@
-import { Box, Text, Drop, Button, WorldMap, dark } from "grommet";
+import { Box, Text, Drop, Button, WorldMap, dark, Avatar } from "grommet";
 import { Location } from "grommet-icons";
 import { useState, useRef } from "react";
 import PostCardLocation from "./HelloFromPS";
@@ -58,9 +58,28 @@ const LocationDrop = ({ setLocationDrop, locationDrop, boxRef }) => {
                      color="text-paragraph"
                      places={[
                         {
+                           color: "green",
+                           content: (
+                              <Box pad={{ horizontal: "small", vertical: "xsmall" }}>
+                                 <Text>Palm Springs</Text>
+                              </Box>
+                           ),
+                           dropProps: {
+                              align: { left: "right" },
+                              background: { color: "software-engineer" },
+                              margin: { left: "small" },
+                              round: "xsmall",
+                           },
+                           name: "Palm Springs",
                            location: [33.8303, -116.5453],
-                           ...placeProps("Palm Springs", "brand", true),
+                           onClick: () => {
+                              // Handle click event
+                           },
+                           onHover: () => {
+                              // Handle hover event
+                           },
                         },
+                        // Add more places as needed
                      ]}
                   />
                   <PostCardLocation />

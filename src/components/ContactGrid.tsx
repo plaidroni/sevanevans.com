@@ -58,7 +58,7 @@ function ContactGrid({ setContactSevan }) {
             <Box align="center" justify="center" direction="row" gap="small">
                <Mail />
                <Text weight="normal" size="large">
-                  sevan@thebodymx.com
+                  sevanplusevans@gmail.com
                </Text>
             </Box>
          </Box>

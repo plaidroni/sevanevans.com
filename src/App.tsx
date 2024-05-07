@@ -48,7 +48,7 @@ const AppContainer = styled.div`
 
 const App = () => {
    const [contactSevan, setContactSevan] = React.useState(false);
-   const [dark, setDark] = React.useState(false);
+   const [dark, setDark] = React.useState(true);
 
    // Location Drop
    const [locationDrop, setLocationDrop] = React.useState(false);
@@ -90,7 +90,7 @@ const App = () => {
                }
             >
                <Heading color="collaborator" margin={{ left: "small", top: "none" }} size="small">
-                  s<EvansSpan>evans</EvansSpan>
+                  s.<EvansSpan>evans</EvansSpan>
                </Heading>
                <DarkThemeSwitch dark={dark} setDark={setDark} />
             </Header>
@@ -137,7 +137,7 @@ const App = () => {
                            >
                               Whats up, I'm a{" "}
                               <StyledSpan>self-taught software developer</StyledSpan> &{" "}
-                              <StyledSpan>co-founder of BodyMX</StyledSpan>. I enjoy{" "}
+                              <StyledSpan>tech enthusiast</StyledSpan>. I enjoy{" "}
                               <StyledSpan>long walks on the beach</StyledSpan> and{" "}
                               <StyledSpan>dancing Tango!</StyledSpan>
                            </Paragraph>

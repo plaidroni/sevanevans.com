@@ -38,7 +38,7 @@ export const TechIcon = styled.div`
          props.isGolden
             ? "sepia(50%) drop-shadow(0 0 3px #D4AF37) drop-shadow(0 0 2px #D4AF37)"
             : props.isFiltered
-            ? "grayscale(100%)"
+            ? "grayscale(25%)"
             : "none"};
    }
 `;
@@ -111,7 +111,7 @@ function TechnologyStack() {
                >
                   <Box direction="column" align="center">
                      <Text weight="bold">{hoveredIcon.name}</Text>
-                     {hoveredIcon.isGolden && <Text>Skilled</Text>}
+                     {hoveredIcon.isGolden ? <Text>Skilled</Text> : <Text>Proficient</Text>}
                   </Box>
                </Box>
             </Drop>
