@@ -113,7 +113,7 @@ const App = () => {
                               overflow="hidden"
                               round="full"
                               size="2xl"
-                              src="https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/profilePictures%2FW0xdrFJk8BPiLv93iwv5n7sZleH2?alt=media&token=fd5d2a17-462f-4350-ba6c-6fa10c3b47e9"
+                              src="https://media.licdn.com/dms/image/v2/D5635AQEMRC8s1MpDOw/profile-framedphoto-shrink_200_200/B56ZXFH7HCHoAc-/0/1742768943946?e=1745460000&v=beta&t=GAAgyDWNgeHoYAR43_pwaqHM0PeULLoquvI61nHg88Q"
                            />
                            <Box align="start" justify="start" fill>
                               <Heading margin="none">sevan</Heading>
@@ -135,11 +135,10 @@ const App = () => {
                               margin={{ vertical: "xsmall" }}
                               color="text-paragraph"
                            >
-                              Whats up, I'm a{" "}
-                              <StyledSpan>self-taught software developer</StyledSpan> &{" "}
-                              <StyledSpan>tech enthusiast</StyledSpan>. I enjoy{" "}
+                              Whats up, I'm a <StyledSpan>physics student</StyledSpan> &{" "}
+                              <StyledSpan>software developer</StyledSpan>. I enjoy{" "}
                               <StyledSpan>long walks on the beach</StyledSpan> and{" "}
-                              <StyledSpan>dancing Tango!</StyledSpan>
+                              <StyledSpan>competitive skydiving!</StyledSpan>
                            </Paragraph>
                            <Box
                               align="end"
@@ -226,7 +225,7 @@ const App = () => {
                      </Box>
                   </Box>
                   <Heading level={mobileHeadingLevel} size="medium">
-                     Experience
+                     Experience & Education
                   </Heading>
                   <ProjectsTable />
                   <TechnologyStack />

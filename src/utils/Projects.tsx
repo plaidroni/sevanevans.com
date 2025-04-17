@@ -19,12 +19,21 @@ import {
 
 export const projects = [
    {
+      name: "College Of The Desert",
+      url: "",
+      roles: [{ name: "Physics A.S.", color: { color: "co-founder", opacity: "strong" } }],
+      period: "Jan 2025 - Present",
+      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/college_of_the_desert_logo%20(1).jpg?alt=media&token=e1a65d94-6796-457d-9dc8-22b94254a870",
+      description: `Physics!`,
+      techStack: [],
+   },
+   {
       name: "Tigase, Inc",
       url: "tigase.net",
       roles: [
          { name: "Software Engineer", color: { color: "software-engineer", opacity: "strong" } },
       ],
-      period: "Jan 2021 - Present",
+      period: "Jan 2021 - Sept 2024",
       techStack: [
          { name: "Java", icon: <Java /> },
          { name: "Swift", icon: <Swift /> },
