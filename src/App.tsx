@@ -113,7 +113,7 @@ const App = () => {
                               overflow="hidden"
                               round="full"
                               size="2xl"
-                              src="https://github.com/plaidroni/sevanevans.com/blob/master/public/self.jpeg"
+                              src="https://raw.githubusercontent.com/plaidroni/sevanevans.com/refs/heads/master/public/self.jpeg"
                            />
                            <Box align="start" justify="start" fill>
                               <Heading margin="none">sevan</Heading>
