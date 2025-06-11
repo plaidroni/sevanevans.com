@@ -113,7 +113,7 @@ const App = () => {
                               overflow="hidden"
                               round="full"
                               size="2xl"
-                              src="https://media.licdn.com/dms/image/v2/D5635AQEMRC8s1MpDOw/profile-framedphoto-shrink_200_200/B56ZXFH7HCHoAc-/0/1742768943946?e=1745460000&v=beta&t=GAAgyDWNgeHoYAR43_pwaqHM0PeULLoquvI61nHg88Q"
+                              src="https://github.com/plaidroni/sevanevans.com/blob/master/public/self.jpeg"
                            />
                            <Box align="start" justify="start" fill>
                               <Heading margin="none">sevan</Heading>
