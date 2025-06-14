@@ -3,6 +3,7 @@ import { Location } from "grommet-icons";
 import { useState, useRef } from "react";
 import PostCardLocation from "./HelloFromPS";
 import ImageStack from "./ImageStack";
+import { colors } from "grommet/themes/base";
 
 const placeProps = (name, color, showDrop) => ({
    name,
@@ -60,7 +61,10 @@ const LocationDrop = ({ setLocationDrop, locationDrop, boxRef }) => {
                         {
                            color: "green",
                            content: (
-                              <Box pad={{ horizontal: "small", vertical: "xsmall" }}>
+                              <Box
+                                 pad={{ horizontal: "small", vertical: "xsmall" }}
+                                 background={{ color: "transparent" }}
+                              >
                                  <Text>Palm Springs</Text>
                               </Box>
                            ),

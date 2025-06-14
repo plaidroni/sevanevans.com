@@ -1,14 +1,113 @@
-import { useEffect, useRef } from "react";
+// Signature.tsx
+import styled, { keyframes, css } from "styled-components";
 
-function Signature() {
-   const pathRef = useRef();
+const fillit = (fillColor: string) => keyframes`
+  50% {
+    stroke-dashoffset: 765;
+  }
+  90% {
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: ${fillColor};
+  }
+`;
+
+const fillit1 = (fillColor: string) => keyframes`
+  0% {
+    stroke-dasharray: 1800;
+    stroke-dashoffset: 1800;
+    fill: transparent;
+    opacity: 1;
+  }
+
+
+
+  60% {
+    stroke-dashoffset: 300;
+    opacity: 1;
+  }
+
+  80% {
+   opacity: 0;
+    stroke-dashoffset: 0;
+    fill: ${fillColor};
+  }
+
+  90% {
+    
+  }
+
+  100% {
+    opacity: 0;
+  }
+`;
+
+const SignatureBody = styled.div`
+   background-color: transparent;
+   box-sizing: border-box;
+`;
+
+const SignatureContainer = styled.div`
+   width: 100%;
+   text-align: center;
+`;
+
+const SignatureMain = styled.div`
+   width: 200px;
+`;
+
+const SignatureSVG = styled.svg<{ strokeColor: string; fillColor: string }>`
+   .primaryPath {
+      fill: transparent;
+      stroke-width: 1;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 154;
+      stroke-dashoffset: 154;
+      ${({ fillColor }) => css`
+         animation: ${fillit1(fillColor)} 6.5s linear forwards;
+      `}
+      stroke: ${({ strokeColor }) => strokeColor};
+   }
+
+   .secondaryPath {
+      fill: transparent;
+      stroke-width: 0.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 765;
+      stroke-dashoffset: 765;
+      ${({ fillColor }) => css`
+         animation: ${fillit(fillColor)} 2.5s linear 2s forwards;
+      `}
+      stroke: ${({ strokeColor }) => strokeColor};
+   }
+`;
+
+const SignatureText = styled.text<{ strokeColor: string }>`
+   font-family: "Funnel Sans", sans-serif;
+   fill: ${({ strokeColor }) => strokeColor};
+`;
+
+function Signature({ dark }: { dark: boolean }) {
+   const strokeColor = dark ? "#FFFFFF" : "#000000";
+   const fillColor = dark ? "#FFFFFF" : "#000000";
 
    return (
-      <div className="signatureContainer">
-         <div className="signatureMain">
-            <svg className="signatureSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 118">
-               <path
-                  d="M 74.00,1.00
+      <SignatureBody>
+         <SignatureContainer>
+            <SignatureMain>
+               <SignatureSVG
+                  strokeColor={strokeColor}
+                  fillColor={fillColor}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 400 118"
+               >
+                  <path
+                     className="primaryPath"
+                     d="M 74.00,1.00
            C 74.00,1.00 76.00,1.00 76.00,1.00
              77.36,6.17 74.91,21.26 71.87,25.71
              70.85,27.19 70.38,27.18 69.00,28.00
@@ -107,21 +206,19 @@ function Signature() {
            C 281.00,98.00 280.00,98.00 280.00,98.00
              280.00,98.00 281.00,99.00 281.00,99.00
              281.00,99.00 281.00,98.00 281.00,98.00 Z"
-                  transform="translate(15 10)"
-               />
-               <text
-                  className="signatureText"
-                  transform="translate(30 105) scale(0.97 1)"
-                  font-size="85"
-                  style={{
-                     fontFamily: 'Funnel Sans", sans-serif;',
-                  }}
-               >
-                  s.evans
-               </text>
-            </svg>
-         </div>
-      </div>
+                     transform="translate(15 10)"
+                  />
+                  <text
+                     className="secondaryPath"
+                     transform="translate(30 105) scale(0.97 1)"
+                     fontSize="85"
+                  >
+                     s.evans
+                  </text>
+               </SignatureSVG>
+            </SignatureMain>
+         </SignatureContainer>
+      </SignatureBody>
    );
 }
 

@@ -24,8 +24,8 @@
 }
 .signatureSign > *:nth-child(1) {
    fill: transparent;
-   stroke-width: 0.3;
-   stroke: white;
+   stroke-width: 1;
+   stroke: var(--);
    stroke-dasharray: 154;
    stroke-dashoffset: 154;
    stroke-linecap: round;

@@ -11,7 +11,7 @@ const theme = {
          },
          background: {
             dark: "#111111",
-            light: "#FFFFFF",
+            light: "#FAF9F6",
          },
          "background-back": {
             dark: "#111111",
@@ -19,7 +19,7 @@ const theme = {
          },
          "background-front": {
             dark: "#222222",
-            light: "#FFFFFF",
+            light: "#FAF9F6",
          },
          "background-contrast": {
             dark: "#FFFFFF11",
@@ -27,7 +27,7 @@ const theme = {
          },
          text: {
             dark: "#EEEEEE",
-            light: "#333333",
+            light: "#111111",
          },
          "text-strong": {
             dark: "#FFFFFF",
@@ -53,10 +53,12 @@ const theme = {
             dark: "#444444",
             light: "#CCCCCC",
          },
-         "co-founder": "#1D2E28",
-         collaborator: "#0F5132",
-         "1st-place": "#14452F",
-         "software-engineer": "#006e48",
+         "co-founder": "#51A3A3",
+         collaborator: "#DFCC74",
+         "1st-place": "#CB904D",
+         "software-engineer": "#75485E",
+         "physics-as": "#C3E991",
+         contract: "#944BBB",
 
          control: "brand",
          "active-background": "background-contrast",

@@ -4,6 +4,7 @@ import { normalizeColor } from "grommet/utils";
 export const StyledSpan = styled.span`
    ${({ theme }) => css`
       color: ${normalizeColor("text-paragraph-highlight", theme)};
+      font-weight: bold;
    `}
 `;
 

@@ -49,7 +49,7 @@ const AppContainer = styled.div`
 
 const App = () => {
    const [contactSevan, setContactSevan] = React.useState(false);
-   const [dark, setDark] = React.useState(true);
+   const [dark, setDark] = React.useState(false);
 
    // Location Drop
    const [locationDrop, setLocationDrop] = React.useState(false);
@@ -67,7 +67,6 @@ const App = () => {
    return (
       <Grommet full theme={theme} themeMode={dark ? "dark" : "light"}>
          <ToastProvider>
-            {/* <AppContainer> */}
             <Header
                align="center"
                direction="row"
@@ -76,6 +75,7 @@ const App = () => {
                gap="medium"
                pad="xsmall"
                sticky="scrollup"
+               height={"xsmall"}
                style={
                   dark
                      ? {
@@ -91,7 +91,7 @@ const App = () => {
                }
             >
                <Heading margin={{ left: "small", top: "none" }} size="small">
-                  <Signature />
+                  <Signature dark={dark} />
                </Heading>
                <DarkThemeSwitch dark={dark} setDark={setDark} />
             </Header>
@@ -137,9 +137,8 @@ const App = () => {
                               color="text-paragraph"
                            >
                               Whats up, I'm a <StyledSpan>physics student</StyledSpan> &{" "}
-                              <StyledSpan>software developer</StyledSpan>. I enjoy{" "}
-                              <StyledSpan>long walks on the beach</StyledSpan> and{" "}
-                              <StyledSpan>competitive skydiving!</StyledSpan>
+                              <StyledSpan>software developer</StyledSpan>. I enjoy long walks on the
+                              beach and competitive skydiving!
                            </Paragraph>
                            <Box
                               align="end"
@@ -202,7 +201,7 @@ const App = () => {
                            margin={{ vertical: "small" }}
                            size="medium"
                         >
-                           Work
+                           About Me
                         </Heading>
 
                         <Paragraph
@@ -211,17 +210,15 @@ const App = () => {
                            fill
                            color="text-paragraph"
                         >
-                           With a love for <StyledSpan>coding</StyledSpan> rivaled only by my love
-                           for
-                           <StyledSpan> coffee</StyledSpan>, I've spent a{" "}
-                           <StyledSpan>decade</StyledSpan> turning caffeine and code into innovative{" "}
-                           <StyledSpan>software solutions</StyledSpan>. I take pride in{" "}
-                           <StyledSpan>crafting user experiences</StyledSpan> that simplify
-                           complexity, foster engagement, and{" "}
-                           <StyledSpan>enhance overall usability</StyledSpan>. Striking a balance
-                           between aesthetics, functionality, and user-centric principles, my work
-                           symbolizes the essence of{" "}
-                           <StyledSpan>impactful digital design</StyledSpan>.
+                           With a love for <StyledSpan>building software</StyledSpan> rivaled only
+                           by my love for coffee, I’ve spent the past decade crafting{" "}
+                           <StyledSpan>web and cross-platform mobile applications</StyledSpan> that
+                           are fast, intuitive, and scalable. From concept to deployment, I focus on{" "}
+                           <StyledSpan>responsive UI design</StyledSpan>,
+                           <StyledSpan> clean project architecture</StyledSpan>, and{" "}
+                           <StyledSpan>seamless user experiences</StyledSpan>. I bridge
+                           functionality and form to deliver impactful digital products that work
+                           beautifully across devices.
                         </Paragraph>
                      </Box>
                   </Box>
@@ -230,7 +227,23 @@ const App = () => {
                   </Heading>
                   <ProjectsTable />
                   <TechnologyStack />
-
+                  {/* <Box
+                     align="center"
+                     justify="center"
+                     margin={{ top: "small" }}
+                     border={{ color: "active-background", side: "top", size: "small" }}
+                     gap="medium"
+                  >
+                     <Box align="start" justify="center" fill="horizontal">
+                        <Heading
+                           level={mobileHeadingLevel}
+                           margin={{ vertical: "small" }}
+                           size="medium"
+                        >
+                           Projects
+                        </Heading>
+                     </Box>
+                  </Box> */}
                   <Box
                      align="center"
                      justify="center"
