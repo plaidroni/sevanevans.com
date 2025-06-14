@@ -41,6 +41,7 @@ import LocationDrop from "./components/LocationDrop";
 import useMediaQuery from "./hooks/UseMediaQuery";
 import TechnologyStack from "./components/TechnologyStack";
 import DancingImage from "./components/DancingEasterEgg";
+import Signature from "./components/Signature";
 
 const AppContainer = styled.div`
    position: relative;
@@ -89,8 +90,8 @@ const App = () => {
                        }
                }
             >
-               <Heading color="collaborator" margin={{ left: "small", top: "none" }} size="small">
-                  s.<EvansSpan>evans</EvansSpan>
+               <Heading margin={{ left: "small", top: "none" }} size="small">
+                  <Signature />
                </Heading>
                <DarkThemeSwitch dark={dark} setDark={setDark} />
             </Header>

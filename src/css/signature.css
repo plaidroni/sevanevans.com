@@ -1,0 +1,69 @@
+.signatureBody {
+   background-color: rgb(28, 28, 29);
+   box-sizing: border-box;
+}
+.signatureContainer {
+   width: 100%;
+   text-align: center;
+}
+.signatureMain {
+   width: 200px;
+}
+.signatureText {
+   /* opacity: 30%; */
+}
+.signatureSign > *:nth-child(2) {
+   fill: transparent;
+   stroke-width: 0.3;
+   stroke: white;
+   stroke-dasharray: 765;
+   stroke-dashoffset: 765;
+   stroke-linecap: round;
+   stroke-linejoin: round;
+   animation: fillit 2.5s linear 2s forwards;
+}
+.signatureSign > *:nth-child(1) {
+   fill: transparent;
+   stroke-width: 0.3;
+   stroke: white;
+   stroke-dasharray: 154;
+   stroke-dashoffset: 154;
+   stroke-linecap: round;
+   stroke-linejoin: round;
+   animation: fillit1 6.5s linear forwards;
+}
+
+@keyframes fillit {
+   50% {
+      stroke-dashoffset: 765;
+   }
+   90% {
+      fill: transparent;
+   }
+   100% {
+      stroke-dashoffset: 0;
+      fill: white;
+   }
+}
+@keyframes fillit1 {
+   0% {
+      stroke-dasharray: 1350;
+      stroke-dashoffset: 1350;
+   }
+   37% {
+      fill: transparent;
+   }
+   40% {
+      stroke-dashoffset: 0;
+      fill: white;
+   }
+   75% {
+      opacity: 100%;
+   }
+   90% {
+      opacity: 50%;
+   }
+   100% {
+      opacity: 5%;
+   }
+}
