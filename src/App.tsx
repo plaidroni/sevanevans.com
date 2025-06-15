@@ -52,6 +52,17 @@ const App = () => {
    const [contactSevan, setContactSevan] = React.useState(false);
    const [dark, setDark] = React.useState(false);
 
+   React.useEffect(() => {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+      setDark(mediaQuery.matches);
+
+      const handler = (e) => setDark(e.matches);
+      mediaQuery.addEventListener("change", handler);
+
+      return () => mediaQuery.removeEventListener("change", handler);
+   }, []);
+
    // Location Drop
    const [locationDrop, setLocationDrop] = React.useState(false);
    const boxRef = useRef<any | null>(null);
