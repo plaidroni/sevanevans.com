@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, Text, AnchorType, Anchor } from "grommet";
+import { Grid, Box, Text, AnchorType, Anchor, Button } from "grommet";
 import { Linkedin, Mail, Github } from "grommet-icons";
 import { useToast } from "../utils/ToastUtils";
 function ContactGrid({ setContactSevan }) {
@@ -43,25 +43,29 @@ function ContactGrid({ setContactSevan }) {
                </Text>
             </Box>
          </Box>
-         <Box
-            align="center"
-            justify="between"
-            width={{ min: "350px", max: "fill" }}
-            height="xxsmall"
-            background={{ color: "neutral-4", opacity: "strong" }}
-            pad="small"
-            direction="row"
-            gap="small"
-            round="xsmall"
-            onClick={() => setContactSevan(true)}
-         >
-            <Box align="center" justify="center" direction="row" gap="small">
-               <Mail />
-               <Text weight="normal" size="large">
-                  sevanplusevans@gmail.com
-               </Text>
+         <Button href="mailto:sevanplusevans@gmail.com">
+            <Box
+               align="center"
+               justify="between"
+               width={{ min: "350px", max: "fill" }}
+               height="xxsmall"
+               background={{ color: "neutral-4", opacity: "strong" }}
+               pad="small"
+               direction="row"
+               gap="small"
+               round="xsmall"
+
+               // onClick={() => setContactSevan(true)}
+            >
+               <Box align="center" justify="center" direction="row" gap="small">
+                  <Mail />
+                  <Text weight="normal" size="large">
+                     sevanplusevans@gmail.com
+                  </Text>
+               </Box>
             </Box>
-         </Box>
+         </Button>
+
          <Box
             align="center"
             justify="between"

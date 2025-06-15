@@ -59,7 +59,7 @@ const LocationDrop = ({ setLocationDrop, locationDrop, boxRef }) => {
                      color="text-paragraph"
                      places={[
                         {
-                           color: "green",
+                           color: "physics-as",
                            content: (
                               <Box
                                  pad={{ horizontal: "small", vertical: "xsmall" }}

@@ -42,6 +42,7 @@ import useMediaQuery from "./hooks/UseMediaQuery";
 import TechnologyStack from "./components/TechnologyStack";
 import DancingImage from "./components/DancingEasterEgg";
 import Signature from "./components/Signature";
+import ProjectsSection from "./components/ProjectsSection";
 
 const AppContainer = styled.div`
    position: relative;
@@ -177,21 +178,26 @@ const App = () => {
                                  primary
                                  icon={<ChatOption />}
                                  label="let's talk"
-                                 onClick={() => setContactSevan(true)}
+                                 // onClick={() => setContactSevan(true)}
+                                 href="mailto:sevanplusevans@gmail.com"
                               />
                            </Box>
                         )}
                      </Box>
                      {!isMobile && (
                         <Box align="center" justify="center" flex fill="horizontal">
-                           <Anchor label="let's talk" onClick={() => setContactSevan(true)} />
+                           <Anchor
+                              label="let's talk"
+                              href="mailto:sevanplusevans@gmail.com"
+                              // onClick={() => setContactSevan(true)}
+                           />
                         </Box>
                      )}
                   </Box>
                   <Box
                      align="center"
                      justify="center"
-                     margin={{ top: "small" }}
+                     margin={{ top: "small", bottom: "small" }}
                      border={{ color: "active-background", side: "top", size: "small" }}
                      gap="medium"
                   >
@@ -222,12 +228,19 @@ const App = () => {
                         </Paragraph>
                      </Box>
                   </Box>
-                  <Heading level={mobileHeadingLevel} size="medium">
-                     Experience & Education
-                  </Heading>
-                  <ProjectsTable />
-                  <TechnologyStack />
-                  {/* <Box
+                  <Box border={{ color: "active-background", side: "top", size: "small" }}>
+                     <Heading level={mobileHeadingLevel} size="medium">
+                        Experience & Education
+                     </Heading>
+                     <ProjectsTable />
+                  </Box>
+                  <Box border={{ color: "active-background", side: "top", size: "small" }}>
+                     <Heading level={mobileHeadingLevel} size="medium">
+                        My Tools of Choice
+                     </Heading>
+                     <TechnologyStack />
+                  </Box>
+                  <Box
                      align="center"
                      justify="center"
                      margin={{ top: "small" }}
@@ -240,10 +253,11 @@ const App = () => {
                            margin={{ vertical: "small" }}
                            size="medium"
                         >
-                           Projects
+                           Featured Projects
                         </Heading>
+                        <ProjectsSection isMobile={isMobile} />
                      </Box>
-                  </Box> */}
+                  </Box>
                   <Box
                      align="center"
                      justify="center"
