@@ -145,6 +145,23 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
    return (
       <ProjectsContainer>
          <Project>
+            <Box align="center">
+               <Heading level={mobileHeadingLevel}>JumperSim</Heading>
+               <Box direction="row" wrap gap="small" justify="start" pad="small">
+                  {jumperSimStack.map((item, i) => (
+                     <Box onMouseOver={(e) => handleMouseOver(e, item)} onMouseOut={handleMouseOut}>
+                        <TechIcon
+                           key={i}
+                           isGolden={item.name == "ThreeJs" ? true : false}
+                           isFiltered={false}
+                        >
+                           {item.icon}
+                        </TechIcon>
+                     </Box>
+                  ))}
+               </Box>
+            </Box>
+
             <ProjectPics>
                <Thumbnail
                   src="/jumpersim.png"
@@ -153,16 +170,6 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
                />
             </ProjectPics>
             <Text>
-               <Heading level={mobileHeadingLevel}>JumperSim</Heading>
-               <Box direction="row" wrap gap="small" justify="start" pad="small">
-                  {jumperSimStack.map((item, i) => (
-                     <Box onMouseOver={(e) => handleMouseOver(e, item)} onMouseOut={handleMouseOut}>
-                        <TechIcon key={i} isGolden={false} isFiltered={false}>
-                           {item.icon}
-                        </TechIcon>
-                     </Box>
-                  ))}
-               </Box>
                <Anchor href="https://www.github.com/plaidroni/Jumpersim">github</Anchor>
                <p>
                   JumperSim is a 3D skydive simulation tool built with Three.js, designed to
@@ -178,6 +185,24 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
          </Project>
 
          <Project>
+            <Box align="center">
+               <Heading level={mobileHeadingLevel}>BodyMX Web App</Heading>
+
+               <Box direction="row" wrap gap="small" justify="start" pad="small">
+                  {bodymxTechStack.map((item, i) => (
+                     <Box onMouseOver={(e) => handleMouseOver(e, item)} onMouseOut={handleMouseOut}>
+                        <TechIcon
+                           key={i}
+                           isGolden={item.name == "Express" ? true : false}
+                           isFiltered={false}
+                        >
+                           {item.icon}
+                        </TechIcon>
+                     </Box>
+                  ))}
+               </Box>
+            </Box>
+
             <ProjectPics>
                <Carousel>
                   <Thumbnail
@@ -203,17 +228,6 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
                </Carousel>
             </ProjectPics>
             <Text>
-               <Heading level={mobileHeadingLevel}>BodyMX Web App</Heading>
-
-               <Box direction="row" wrap gap="small" justify="start" pad="small">
-                  {bodymxTechStack.map((item, i) => (
-                     <Box onMouseOver={(e) => handleMouseOver(e, item)} onMouseOut={handleMouseOut}>
-                        <TechIcon key={i} isGolden={false} isFiltered={false}>
-                           {item.icon}
-                        </TechIcon>
-                     </Box>
-                  ))}
-               </Box>
                <p>
                   BodyMX is a real-time health and fitness platform offering chat, training logs,
                   and video conferencing for personal trainers and clients. Designed for scalable

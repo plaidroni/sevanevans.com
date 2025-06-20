@@ -152,6 +152,7 @@ const App = () => {
                               <StyledSpan>software developer</StyledSpan>. I enjoy long walks on the
                               beach and competitive skydiving!
                            </Paragraph>
+
                            <Box
                               align="end"
                               justify="center"
