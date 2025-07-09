@@ -212,7 +212,7 @@ const App = () => {
 
                               <Button
                                  label="download resume"
-                                 href="https://github.com/plaidroni/sevanevans.com/blob/master/public/bodymx1.png/Sevan_Evans_CV_NPN.pdf"
+                                 href="/public/Sevan_Evans_CV_NPN.pdf"
                                  download="SevanE_CV"
                                  icon={<Download />}
                                  color={"software-engineer"}
@@ -244,7 +244,7 @@ const App = () => {
                            />
                            <Anchor
                               label="download resume"
-                              href="https://github.com/plaidroni/sevanevans.com/blob/master/public/Sevan_Evans_CV_NPN.pdf"
+                              href="/public/Sevan_Evans_CV_NPN.pdf"
                               download="SevanE_CV"
                               icon={<Download />}
                               color={"contract"}
