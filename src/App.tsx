@@ -27,6 +27,9 @@ import {
    Send,
    Location,
    ChatOption,
+   Link,
+   MailOption,
+   Download,
 } from "grommet-icons";
 import theme from "./theme";
 import { EvansSpan, StyledHeaderSpan, StyledSpan } from "./utils/StyledSpan";
@@ -75,6 +78,18 @@ const App = () => {
 
    // Dancing Easteregg
    const [dancing, setDancing] = React.useState(false);
+
+   const { showToast } = useToast();
+
+   const handleToastNotif = (alertLevel, label, description, duration, actions) => {
+      showToast({
+         alertLevel: alertLevel,
+         label: label,
+         description: description,
+         duration: duration,
+         actions: actions,
+      });
+   };
 
    return (
       <Grommet full theme={theme} themeMode={dark ? "dark" : "light"}>
@@ -183,6 +198,7 @@ const App = () => {
                               justify="center"
                               flex
                               fill="horizontal"
+                              gap={"small"}
                               margin={{ vertical: "small" }}
                               focusIndicator={false}
                            >
@@ -193,15 +209,59 @@ const App = () => {
                                  // onClick={() => setContactSevan(true)}
                                  href="mailto:sevanplusevans@gmail.com"
                               />
+
+                              <Button
+                                 label="download resume"
+                                 href="https://github.com/plaidroni/sevanevans.com/blob/master/public/bodymx1.png/Sevan_Evans_CV_NPN.pdf"
+                                 download="SevanE_CV"
+                                 icon={<Download />}
+                                 color={"software-engineer"}
+                                 onClick={() => {
+                                    handleToastNotif(
+                                       "normal",
+                                       "Downloading",
+                                       "Dear Shady, I left my Resume but you still ain't callin",
+                                       5000,
+                                       [
+                                          {
+                                             onClick: () => {},
+                                             label: "Retry!",
+                                          },
+                                       ],
+                                    );
+                                 }}
+                              />
                            </Box>
                         )}
                      </Box>
                      {!isMobile && (
-                        <Box align="center" justify="center" flex fill="horizontal">
+                        <Box align="center" gap="small" justify="center" flex fill="horizontal">
                            <Anchor
                               label="let's talk"
+                              icon={<MailOption />}
                               href="mailto:sevanplusevans@gmail.com"
                               // onClick={() => setContactSevan(true)}
+                           />
+                           <Anchor
+                              label="download resume"
+                              href="https://github.com/plaidroni/sevanevans.com/blob/master/public/Sevan_Evans_CV_NPN.pdf"
+                              download="SevanE_CV"
+                              icon={<Download />}
+                              color={"contract"}
+                              onClick={() => {
+                                 handleToastNotif(
+                                    "normal",
+                                    "Downloading",
+                                    "Dear Shady, I left my Resume but you still ain't callin",
+                                    5000,
+                                    [
+                                       {
+                                          onClick: () => {},
+                                          label: "Retry!",
+                                       },
+                                    ],
+                                 );
+                              }}
                            />
                         </Box>
                      )}
