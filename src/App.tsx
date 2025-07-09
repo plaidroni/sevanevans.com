@@ -212,7 +212,7 @@ const App = () => {
 
                               <Button
                                  label="download resume"
-                                 href="/public/Sevan_Evans_CV_NPN.pdf"
+                                 href="/Sevan_Evans_CV_NPN.pdf"
                                  download="SevanE_CV"
                                  icon={<Download />}
                                  color={"software-engineer"}
@@ -244,7 +244,7 @@ const App = () => {
                            />
                            <Anchor
                               label="download resume"
-                              href="/public/Sevan_Evans_CV_NPN.pdf"
+                              href="/Sevan_Evans_CV_NPN.pdf"
                               download="SevanE_CV"
                               icon={<Download />}
                               color={"contract"}
