@@ -172,14 +172,17 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
             <Text>
                <Anchor href="https://www.github.com/plaidroni/Jumpersim">github</Anchor>
                <p>
-                  JumperSim is a 3D skydive simulation tool built with Three.js, designed to
-                  visualize exit separation, freefall dynamics, and canopy deployment in a realistic
-                  environment.
+                  JumperSim is a 3D skydiving simulation tool built with Three.js and TypeScript,
+                  designed to model exit separation, freefall dynamics, canopy deployment, and
+                  aircraft flight paths with high accuracy.
                </p>
                <p>
-                  It's a training tool that helps new jumpers understand spatial awareness and
-                  relative positioning before ever boarding the plane. Built with real physics and
-                  accurate time scrubbing for detailed review.
+                  It serves as a training and planning tool for jumpers and dropzone operators,
+                  featuring real-time wind profiles from Open-Meteo, layered wind modeling at 1,000
+                  ft AGL intervals, dynamic Mapbox satellite imagery, and a custom time-scrubbable
+                  playback system. Built with a custom physics engine, JumperSim helps users
+                  visualize spatial awareness, relative positioning, and environmental effects
+                  before ever boarding the plane.
                </p>
             </Text>
          </Project>
