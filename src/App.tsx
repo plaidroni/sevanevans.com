@@ -1,40 +1,9 @@
 import React, { useRef } from "react";
-import {
-   Grommet,
-   Page,
-   Header,
-   Text,
-   PageContent,
-   Box,
-   Avatar,
-   Heading,
-   Paragraph,
-   Anchor,
-   Button,
-   Layer,
-   TextInput,
-   TextArea,
-   ThumbsRating,
-   Grid,
-} from "grommet";
-import {
-   Reactjs,
-   Js,
-   Linkedin,
-   Redo,
-   Mail,
-   Github,
-   Send,
-   Location,
-   ChatOption,
-   Link,
-   MailOption,
-   Download,
-} from "grommet-icons";
+import { Grommet, Page, Header, Text, PageContent, Box, Avatar, Heading, Paragraph, Anchor, Button } from "grommet";
+import { Location, ChatOption, MailOption, Download } from "grommet-icons";
 import theme from "./theme";
-import { EvansSpan, StyledHeaderSpan, StyledSpan } from "./utils/StyledSpan";
-import PostCardLocation from "./components/HelloFromPS";
-import styled from "styled-components";
+import { StyledSpan } from "./utils/StyledSpan";
+// import styled from "styled-components";
 import ContactLayer from "./components/ContactLayer";
 import ProjectsTable from "./components/ExperienceDataTable";
 import DarkThemeSwitch from "./components/DarkThemeSwitch";
@@ -43,13 +12,11 @@ import ContactGrid from "./components/ContactGrid";
 import LocationDrop from "./components/LocationDrop";
 import useMediaQuery from "./hooks/UseMediaQuery";
 import TechnologyStack from "./components/TechnologyStack";
-import DancingImage from "./components/DancingEasterEgg";
+// import DancingImage from "./components/DancingEasterEgg";
 import Signature from "./components/Signature";
 import ProjectsSection from "./components/ProjectsSection";
 
-const AppContainer = styled.div`
-   position: relative;
-`;
+// container styles not needed here
 
 const App = () => {
    const [contactSevan, setContactSevan] = React.useState(false);
@@ -73,11 +40,11 @@ const App = () => {
    // Mobile page padding & sizing
    const { isMobile } = useMediaQuery();
    const mobilePad = isMobile ? "large" : "none";
-   const mobileHeading = isMobile ? "large" : "medium";
+   // const mobileHeading = isMobile ? "large" : "medium";
    const mobileHeadingLevel = isMobile ? 2 : 3;
 
    // Dancing Easteregg
-   const [dancing, setDancing] = React.useState(false);
+   // const [dancing, setDancing] = React.useState(false);
 
    const { showToast } = useToast();
 
@@ -366,7 +333,7 @@ const App = () => {
                      boxRef={boxRef}
                   />
                )}
-               {dancing && <DancingImage />}
+               {/* dancing easter egg removed for now */}
             </Page>
             {/* <PostCardLocation /> */}
             {/* </AppContainer> */}
