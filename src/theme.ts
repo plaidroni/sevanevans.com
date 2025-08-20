@@ -6,7 +6,8 @@ const theme = {
    global: {
       colors: {
          brand: {
-            dark: "#8D3B72",
+            // slightly brighter brand for dark surfaces for better presence
+            dark: "#A04E88",
             light: "#8D3B72",
          },
          background: {
@@ -64,8 +65,10 @@ const theme = {
          "active-background": "background-contrast",
          "active-text": "text-strong",
          "selected-background": "brand",
-         "selected-text": "text-strong",
-         "status-normal": "#FFFFF0",
+         // ensure strong contrast on brand-selected backgrounds
+         "selected-text": "#FFFFFF",
+         // slightly darker than near-white for better visibility on light backgrounds
+         "status-normal": "#EDE8C9",
          "status-critical": "#FF4040",
          "status-warning": "#FFAA15",
          "status-ok": "#00C781",
@@ -73,6 +76,12 @@ const theme = {
          "status-disabled": "#CCCCCC",
          "graph-0": "brand",
          "graph-1": "status-warning",
+         // used in ExperienceDataTable; add an explicit color for consistency
+         "graph-2": "status-ok",
+         // accents provide a richer palette for components needing variations
+         "accent-1": "#3E92CC", // matches focus blue
+         "accent-2": "#51A3A3", // teal
+         "accent-3": "#CB904D", // warm accent
          focus: "#3E92CC",
       },
       font: {

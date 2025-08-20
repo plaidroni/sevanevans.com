@@ -1,6 +1,17 @@
 import React, { useRef } from "react";
-import { Grommet, Page, Header, Text, PageContent, Box, Avatar, Heading, Paragraph, Anchor, Button } from "grommet";
-import { Location, ChatOption, MailOption, Download } from "grommet-icons";
+import {
+   Grommet,
+   Page,
+   Header,
+   Text,
+   PageContent,
+   Box,
+   Avatar,
+   Heading,
+   Paragraph,
+   Button,
+} from "grommet";
+import { Location, ChatOption, Download } from "grommet-icons";
 import theme from "./theme";
 import { StyledSpan } from "./utils/StyledSpan";
 // import styled from "styled-components";
@@ -39,7 +50,8 @@ const App = () => {
 
    // Mobile page padding & sizing
    const { isMobile } = useMediaQuery();
-   const mobilePad = isMobile ? "large" : "none";
+   // Add a bit of breathing room on desktop too
+   const mobilePad = isMobile ? "large" : "medium";
    // const mobileHeading = isMobile ? "large" : "medium";
    const mobileHeadingLevel = isMobile ? 2 : 3;
 
@@ -92,14 +104,19 @@ const App = () => {
 
             <Page kind="narrow">
                <PageContent pad={mobilePad} flex="grow">
-                  <Box align="baseline" justify="between" direction="row">
+                  <Box
+                     align="baseline"
+                     justify="between"
+                     direction="row"
+                     margin={{ bottom: "small" }}
+                  >
                      <Box align="start" justify="center" gap="medium" wrap>
                         <Box
                            align="center"
                            justify="center"
                            direction="row"
                            gap="medium"
-                           pad={{ horizontal: "large" }}
+                           pad={{ horizontal: isMobile ? "medium" : "large" }}
                         >
                            <Avatar
                               align="center"
@@ -129,6 +146,7 @@ const App = () => {
                               size="large"
                               margin={{ vertical: "xsmall" }}
                               color="text-paragraph"
+                              style={{ maxWidth: "65ch" }}
                            >
                               Whats up, I'm a <StyledSpan>physics student</StyledSpan> &{" "}
                               <StyledSpan>software developer</StyledSpan>. I enjoy long walks on the
@@ -150,7 +168,11 @@ const App = () => {
                               border
                            >
                               <Location />
-                              <Paragraph color="text-paragraph" margin="none">
+                              <Paragraph
+                                 color="text-paragraph"
+                                 margin="none"
+                                 style={{ maxWidth: "65ch" }}
+                              >
                                  I'm in{" "}
                                  <Text weight="bold">
                                     <StyledSpan>Palm Springs, California!</StyledSpan>
@@ -158,25 +180,22 @@ const App = () => {
                                  <Text size="small">USA</Text>
                               </Paragraph>
                            </Box>
-                        </Box>
-                        {isMobile && (
+                           {/* Primary CTAs */}
                            <Box
-                              align="center"
+                              align={isMobile ? "center" : "start"}
                               justify="center"
-                              flex
-                              fill="horizontal"
+                              direction="row"
                               gap={"small"}
                               margin={{ vertical: "small" }}
+                              fill={false}
                               focusIndicator={false}
                            >
                               <Button
                                  primary
                                  icon={<ChatOption />}
                                  label="let's talk"
-                                 // onClick={() => setContactSevan(true)}
                                  href="mailto:sevanplusevans@gmail.com"
                               />
-
                               <Button
                                  label="download resume"
                                  href="/Sevan_Evans_CV_NPN.pdf"
@@ -199,51 +218,20 @@ const App = () => {
                                  }}
                               />
                            </Box>
-                        )}
-                     </Box>
-                     {!isMobile && (
-                        <Box align="center" gap="small" justify="center" flex fill="horizontal">
-                           <Anchor
-                              label="let's talk"
-                              icon={<MailOption />}
-                              href="mailto:sevanplusevans@gmail.com"
-                              // onClick={() => setContactSevan(true)}
-                           />
-                           <Anchor
-                              label="download resume"
-                              href="/Sevan_Evans_CV_NPN.pdf"
-                              download="SevanE_CV"
-                              icon={<Download />}
-                              color={"contract"}
-                              onClick={() => {
-                                 handleToastNotif(
-                                    "normal",
-                                    "Downloading",
-                                    "Dear Shady, I left my Resume but you still ain't callin",
-                                    5000,
-                                    [
-                                       {
-                                          onClick: () => {},
-                                          label: "Retry!",
-                                       },
-                                    ],
-                                 );
-                              }}
-                           />
                         </Box>
-                     )}
+                     </Box>
+                     
                   </Box>
                   <Box
                      align="center"
                      justify="center"
-                     margin={{ top: "small", bottom: "small" }}
+                     pad={{ vertical: "medium" }}
                      border={{ color: "active-background", side: "top", size: "small" }}
-                     gap="medium"
                   >
-                     <Box align="start" justify="center" fill="horizontal">
+                     <Box align="start" justify="center" fill="horizontal" gap="xsmall">
                         <Heading
                            level={mobileHeadingLevel}
-                           margin={{ vertical: "small" }}
+                           margin={{ vertical: "xsmall" }}
                            size="medium"
                         >
                            About Me
@@ -254,6 +242,7 @@ const App = () => {
                            margin={{ vertical: "xsmall" }}
                            fill
                            color="text-paragraph"
+                           style={{ maxWidth: "70ch" }}
                         >
                            With a love for <StyledSpan>building software</StyledSpan> rivaled only
                            by my love for coffee, I’ve spent the past decade crafting{" "}
@@ -267,13 +256,19 @@ const App = () => {
                         </Paragraph>
                      </Box>
                   </Box>
-                  <Box border={{ color: "active-background", side: "top", size: "small" }}>
+                  <Box
+                     pad={{ vertical: "medium" }}
+                     border={{ color: "active-background", side: "top", size: "small" }}
+                  >
                      <Heading level={mobileHeadingLevel} size="medium">
                         Experience & Education
                      </Heading>
                      <ProjectsTable />
                   </Box>
-                  <Box border={{ color: "active-background", side: "top", size: "small" }}>
+                  <Box
+                     pad={{ vertical: "medium" }}
+                     border={{ color: "active-background", side: "top", size: "small" }}
+                  >
                      <Heading level={mobileHeadingLevel} size="medium">
                         My Tools of Choice
                      </Heading>
@@ -282,14 +277,13 @@ const App = () => {
                   <Box
                      align="center"
                      justify="center"
-                     margin={{ top: "small" }}
+                     pad={{ vertical: "medium" }}
                      border={{ color: "active-background", side: "top", size: "small" }}
-                     gap="medium"
                   >
-                     <Box align="start" justify="center" fill="horizontal">
+                     <Box align="start" justify="center" fill="horizontal" gap="xsmall">
                         <Heading
                            level={mobileHeadingLevel}
-                           margin={{ vertical: "small" }}
+                           margin={{ vertical: "xsmall" }}
                            size="medium"
                         >
                            Featured Projects
@@ -300,14 +294,13 @@ const App = () => {
                   <Box
                      align="center"
                      justify="center"
-                     margin={{ top: "small" }}
+                     pad={{ vertical: "medium" }}
                      border={{ color: "active-background", side: "top", size: "small" }}
-                     gap="medium"
                   >
-                     <Box align="start" justify="center" fill="horizontal">
+                     <Box align="start" justify="center" fill="horizontal" gap="xsmall">
                         <Heading
                            level={mobileHeadingLevel}
-                           margin={{ vertical: "small" }}
+                           margin={{ vertical: "xsmall" }}
                            size="medium"
                         >
                            Contact
@@ -317,6 +310,7 @@ const App = () => {
                            margin={{ vertical: "xsmall" }}
                            fill
                            color="text-paragraph"
+                           style={{ maxWidth: "70ch" }}
                         >
                            Give me a shout, and we can make something cool happen. I'm usually quick
                            to respond.

@@ -397,6 +397,16 @@ export const Heroku = () => {
       </svg>
    );
 };
+
+// Stripe (simplified badge)
+export const Stripe = () => {
+   return (
+      <svg viewBox="0 0 128 128">
+         <rect x="12" y="12" width="104" height="104" rx="18" ry="18" fill="#635BFF" />
+         <rect x="28" y="56" width="72" height="16" rx="8" ry="8" fill="#FFFFFF" opacity="0.92" />
+      </svg>
+   );
+};
 export const CSharp = () => {
    return (
       <svg viewBox="0 0 128 128">

@@ -14,6 +14,7 @@ import {
    ThreeJS,
    Git,
    Tailwind,
+   Stripe,
 } from "../utils/TechnologySVGList";
 import { Grommet, Link as LinkIcon } from "grommet-icons";
 
@@ -178,16 +179,17 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
       },
       {
          name: "Coell Studios",
-         images: ["coell1.png", "coell2.png", "coell3.png", "coell4.png"],
+         images: ["coell1.png", "coell2.png", "coell3.jpg", "coell4.jpg"],
          techStack: [
             { name: "Firebase", icon: <Firebase /> },
             { name: "React", icon: <ReactIcon /> },
             { name: "Tailwind", icon: <Tailwind /> },
+            { name: "Stripe", icon: <Stripe /> },
          ],
          github: null,
          live: "https://www.coellstudios.com",
          summary:
-            "Skydiving photography site with performant galleries built on Firebase, React, and Tailwind.",
+            "Skydiving photography site with performant galleries and payments, built on Firebase, React, Tailwind, and Stripe.",
          description: (
             <>
                <p>
@@ -197,8 +199,8 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
                </p>
                <p>
                   Features include album-based browsing, lazy-loading, optimized thumbnails, and
-                  mobile-first layouts. Firebase handles content delivery and metadata while keeping
-                  costs low and performance high.
+                  mobile-first layouts. Firebase handles content delivery and metadata while Stripe
+                  enables secure payments for prints and downloads.
                </p>
             </>
          ),
