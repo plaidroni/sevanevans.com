@@ -19,6 +19,18 @@ import {
 
 export const projects = [
    {
+      name: "Windtree Education",
+      url: "",
+      roles: [{ name: "STEM Teacher", color: { color: "software-engineer", opacity: "strong" } }],
+      period: "Sept 2025 - Present",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbYkiacbF59c8bXU9mj_HrT7oDdIu2QMYMMA&s",
+      description: `Introduce K–12 students to foundational engineering concepts using hands-on demonstrations and simplified physics experiments.
+      
+Communicate complex scientific principles clearly to students of varied experience levels.
+`,
+      techStack: [],
+   },
+   {
       name: "College Of The Desert",
       url: "",
       roles: [{ name: "Physics A.S.", color: { color: "physics-as", opacity: "strong" } }],

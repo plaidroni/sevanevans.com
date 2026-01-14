@@ -220,7 +220,6 @@ const App = () => {
                            </Box>
                         </Box>
                      </Box>
-                     
                   </Box>
                   <Box
                      align="center"
@@ -244,15 +243,12 @@ const App = () => {
                            color="text-paragraph"
                            style={{ maxWidth: "70ch" }}
                         >
-                           With a love for <StyledSpan>building software</StyledSpan> rivaled only
-                           by my love for coffee, I’ve spent the past decade crafting{" "}
-                           <StyledSpan>web and cross-platform mobile applications</StyledSpan> that
-                           are fast, intuitive, and scalable. From concept to deployment, I focus on{" "}
-                           <StyledSpan>responsive UI design</StyledSpan>,
-                           <StyledSpan> clean project architecture</StyledSpan>, and{" "}
-                           <StyledSpan>seamless user experiences</StyledSpan>. I bridge
-                           functionality and form to deliver impactful digital products that work
-                           beautifully across devices.
+                           Hi! My name is Sevan, I'm passionate about both physics and software
+                           development, which is rivaled only by my passion for coffee. I'm
+                           currently pursuing an Associate of Science degree in Physics at College
+                           of the Desert, and I have an express interest in{" "}
+                           <StyledSpan>Computational Fluid Dynamics</StyledSpan> . I love to solve
+                           complex problems, and build novel things.
                         </Paragraph>
                      </Box>
                   </Box>
