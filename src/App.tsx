@@ -243,7 +243,7 @@ const App = () => {
                            color="text-paragraph"
                            style={{ maxWidth: "70ch" }}
                         >
-                           Hi! My name is Sevan, I'm passionate about both physics and software
+                           My name is Sevan. I'm passionate about both physics and software
                            development, which is rivaled only by my passion for coffee. I'm
                            currently pursuing an Associate of Science degree in Physics at College
                            of the Desert, and I have an express interest in{" "}

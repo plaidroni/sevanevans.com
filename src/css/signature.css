@@ -57,13 +57,7 @@
       stroke-dashoffset: 0;
       fill: white;
    }
-   75% {
-      opacity: 100%;
-   }
-   90% {
-      opacity: 50%;
-   }
    100% {
-      opacity: 5%;
+      opacity: 100%;
    }
 }
