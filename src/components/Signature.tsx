@@ -29,19 +29,16 @@ const fillit1 = (fillColor: string) => keyframes`
     opacity: 1;
   }
 
-  80% {
-   opacity: 0;
-    stroke-dashoffset: 0;
-    fill: ${fillColor};
-  }
+   80% {
+      stroke-dashoffset: 0;
+      fill: ${fillColor};
+   }
 
-  90% {
-    
-  }
-
-  100% {
-    opacity: 0;
-  }
+   100% {
+      stroke-dashoffset: 0;
+      fill: ${fillColor};
+      opacity: 1;
+   }
 `;
 
 const SignatureBody = styled.div`
@@ -105,6 +102,7 @@ function Signature({ dark }: { dark: boolean }) {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 400 118"
                >
+                  <title>Sevan Evans</title>
                   <path
                      className="primaryPath"
                      d="M 74.00,1.00
@@ -208,13 +206,6 @@ function Signature({ dark }: { dark: boolean }) {
              281.00,99.00 281.00,98.00 281.00,98.00 Z"
                      transform="translate(15 10)"
                   />
-                  <text
-                     className="secondaryPath"
-                     transform="translate(30 105) scale(0.97 1)"
-                     fontSize="85"
-                  >
-                     s.evans
-                  </text>
                </SignatureSVG>
             </SignatureMain>
          </SignatureContainer>
