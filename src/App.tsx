@@ -148,9 +148,9 @@ const App = () => {
                               color="text-paragraph"
                               style={{ maxWidth: "65ch" }}
                            >
-                              Whats up, I'm a <StyledSpan>physics student</StyledSpan> &{" "}
-                              <StyledSpan>software developer</StyledSpan>. I enjoy long walks on the
-                              beach and competitive skydiving!
+                              Hey, I'm Sevan. I am a <StyledSpan>physics student</StyledSpan> &{" "}
+                              <StyledSpan>software developer</StyledSpan>. I enjoy dancing tango and
+                              competitive skydiving!
                            </Paragraph>
 
                            <Box
@@ -243,12 +243,11 @@ const App = () => {
                            color="text-paragraph"
                            style={{ maxWidth: "70ch" }}
                         >
-                           My name is Sevan. I'm passionate about both physics and software
-                           development, which is rivaled only by my passion for coffee. I'm
-                           currently pursuing an Associate of Science degree in Physics at College
-                           of the Desert, and I have an express interest in{" "}
-                           <StyledSpan>Computational Fluid Dynamics</StyledSpan> . I love to solve
-                           complex problems, and build novel things.
+                           I'm passionate about both physics and software development, which is
+                           rivaled only by my love for coffee. I'm currently pursuing an Associate
+                           of Science degree in Physics at College of the Desert, and I have an
+                           strong interest in scientific computing, simulations, and Computational
+                           Fluid Dynamics. I love to solve problems, and build novel things.
                         </Paragraph>
                      </Box>
                   </Box>
