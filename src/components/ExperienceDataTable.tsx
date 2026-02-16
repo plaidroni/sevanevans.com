@@ -10,8 +10,9 @@ import {
    Paragraph,
    Anchor,
    Image,
+   Button,
 } from "grommet";
-import { Link, Calendar, List, Technology, Menu, Grommet } from "grommet-icons";
+import { Link, Calendar, List, Technology, Menu, Grommet, Close } from "grommet-icons";
 import styled from "styled-components";
 
 import {
@@ -54,6 +55,17 @@ const RoleTag = ({ role }) => {
       </Box>
    );
 };
+
+const SectionCard = styled(Box)`
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   border-radius: 12px;
+   padding: 12px;
+   background: rgba(255, 255, 255, 0.03);
+`;
+
+const SectionTitle = styled(Text)`
+   font-weight: 600;
+`;
 
 const ProjectBox = ({ project, onClick }) => {
    const { isMobile } = useMediaQuery();
@@ -148,135 +160,111 @@ const SelectLayer = ({ project, setSelectedProject }) => {
          onClickOutside={() => setSelectedProject(null)}
          margin={{ left: "large" }}
       >
-         <Box fill="vertical" overflow="auto">
-            <Box align="start" justify="center" width="medium" pad="medium">
-               <Image width="32px" height="32px" src={project.img}></Image>
-               <Heading>{project.name}</Heading>
-            </Box>
-            <Box align="start" justify="between" gap="medium" flex="grow">
-               <Box align="start" justify="start" gap="medium" fill="horizontal" pad="medium">
-                  <Box
-                     align="start"
-                     justify="between"
-                     fill="horizontal"
-                     direction="row"
-                     pad="small"
-                  >
-                     <Box align="start" justify="start" direction="row" gap="small">
-                        <List />
-                        <Text>Tags</Text>
+         <Box fill="vertical" overflow="auto" background="background-back">
+            <Box width="medium" pad="medium" gap="medium">
+               <Box direction="row" align="center" justify="between">
+                  <Box direction="row" align="center" gap="small">
+                     <Image width="36px" height="36px" src={project.img}></Image>
+                     <Box>
+                        <Heading level={3} margin="none">
+                           {project.name}
+                        </Heading>
+                        {project.url && (
+                           <Text size="small" color="text-weak">
+                              {project.url}
+                           </Text>
+                        )}
                      </Box>
-                     <Box direction="row" gap="xsmall">
+                  </Box>
+                  <Button plain icon={<Close />} onClick={() => setSelectedProject(null)} />
+               </Box>
+
+               <SectionCard>
+                  <Box direction="row" align="center" justify="between" gap="small">
+                     <Box direction="row" align="center" gap="small">
+                        <List />
+                        <SectionTitle>Tags</SectionTitle>
+                     </Box>
+                     <Box direction="row" gap="xsmall" wrap>
                         {project.roles &&
                            project.roles.map((role, index) => <RoleTag key={index} role={role} />)}
                      </Box>
                   </Box>
+               </SectionCard>
 
-                  <Box
-                     align="start"
-                     justify="between"
-                     fill="horizontal"
-                     direction="row"
-                     pad="small"
-                  >
-                     <Box align="start" justify="start" direction="row" gap="small">
+               <SectionCard>
+                  <Box direction="row" align="center" justify="between" gap="small">
+                     <Box direction="row" align="center" gap="small">
                         <Link />
-                        <Text>Link</Text>
+                        <SectionTitle>Link</SectionTitle>
                      </Box>
-                     <Box align="center" justify="center" wrap>
-                        <Anchor
-                           onClick={() => {
-                              window.open("https://www." + project.url);
-                           }}
-                        >
-                           {project.url}
-                        </Anchor>
-                     </Box>
+                     <Anchor href={`https://www.${project.url}`} target="_blank" rel="noreferrer">
+                        {project.url}
+                     </Anchor>
                   </Box>
-                  <Box
-                     align="start"
-                     justify="between"
-                     fill="horizontal"
-                     direction="row"
-                     pad="small"
-                  >
-                     <Box align="start" justify="start" direction="row" gap="small">
-                        <Calendar />
-                        <Text>Date(s)</Text>
-                     </Box>
-                     <Box align="center" justify="center" wrap>
-                        <Text>{project.period}</Text>
-                     </Box>
-                  </Box>
-                  <Box
-                     align="start"
-                     justify="between"
-                     fill="horizontal"
-                     direction="row"
-                     pad="small"
-                  >
-                     <Box align="start" justify="start" direction="row" gap="small">
-                        <Technology />
-                        <Text>Tech Stack</Text>
-                     </Box>
+               </SectionCard>
 
-                     <Grid columns={{ count: 3, size: "auto" }} gap="xsmall">
-                        {project.techStack.map((item, i) => (
+               <SectionCard>
+                  <Box direction="row" align="center" justify="between" gap="small">
+                     <Box direction="row" align="center" gap="small">
+                        <Calendar />
+                        <SectionTitle>Date(s)</SectionTitle>
+                     </Box>
+                     <Text>{project.period}</Text>
+                  </Box>
+               </SectionCard>
+
+               <SectionCard>
+                  <Box direction="row" align="center" justify="between" gap="small">
+                     <Box direction="row" align="center" gap="small">
+                        <Technology />
+                        <SectionTitle>Tech Stack</SectionTitle>
+                     </Box>
+                  </Box>
+                  <Grid columns={{ count: 4, size: "auto" }} gap="xsmall" margin={{ top: "small" }}>
+                     {project.techStack.map((item, i) => (
+                        <Box
+                           onMouseOver={(e) => handleMouseOver(e, item)}
+                           onMouseOut={handleMouseOut}
+                        >
+                           <TechIcon key={i} isGolden={false} isFiltered={false}>
+                              {item.icon}
+                           </TechIcon>
+                        </Box>
+                     ))}
+                     {showDrop && hoveredIcon && (
+                        <Drop align={{ bottom: "top" }} target={hoverRef} plain overflow="hidden">
                            <Box
-                              onMouseOver={(e) => handleMouseOver(e, item)}
-                              onMouseOut={handleMouseOut}
+                              pad="xsmall"
+                              background="dark-3"
+                              round={{ size: "xsmall" }}
+                              margin="xsmall"
+                              style={{
+                                 background: "rgba(139, 139, 139, 0.95)",
+                                 backdropFilter: "blur(5.5px)",
+                                 WebkitBackdropFilter: "blur(8.5px)",
+                                 border: "1px solid rgba(255, 255, 255, 0.18)",
+                              }}
                            >
-                              <TechIcon key={i} isGolden={false} isFiltered={false}>
-                                 {item.icon}
-                              </TechIcon>
-                           </Box>
-                        ))}
-                        {showDrop && hoveredIcon && (
-                           <Drop
-                              align={{ bottom: "top" }}
-                              target={hoverRef}
-                              plain
-                              overflow="hidden"
-                           >
-                              <Box
-                                 pad="xsmall"
-                                 background="dark-3"
-                                 round={{ size: "xsmall" }}
-                                 margin="xsmall"
-                                 style={{
-                                    background: "rgba(139, 139, 139, 0.95)",
-                                    backdropFilter: "blur(5.5px)",
-                                    WebkitBackdropFilter: "blur(8.5px)",
-                                    border: "1px solid rgba(255, 255, 255, 0.18)",
-                                 }}
-                              >
-                                 <Box direction="column" align="center">
-                                    <Text weight="bold">{hoveredIcon.name}</Text>
-                                    {hoveredIcon.isGolden && <Text>Skilled</Text>}
-                                 </Box>
+                              <Box direction="column" align="center">
+                                 <Text weight="bold">{hoveredIcon.name}</Text>
+                                 {hoveredIcon.isGolden && <Text>Skilled</Text>}
                               </Box>
-                           </Drop>
-                        )}
-                     </Grid>
+                           </Box>
+                        </Drop>
+                     )}
+                  </Grid>
+               </SectionCard>
+
+               <SectionCard>
+                  <Box direction="row" align="center" gap="small">
+                     <Menu />
+                     <SectionTitle>Description</SectionTitle>
                   </Box>
-                  <Box
-                     align="start"
-                     justify="between"
-                     fill="horizontal"
-                     direction="column"
-                     pad="small"
-                     gap="large"
-                  >
-                     <Box align="start" justify="start" direction="row" gap="small">
-                        <Menu />
-                        <Text>Description</Text>
-                     </Box>
-                     <Box align="center" justify="center" wrap>
-                        <Paragraph size="small">{project.description}</Paragraph>
-                     </Box>
-                     <Box align="center" justify="center" background={{ color: "graph-2" }} wrap />
-                  </Box>
-               </Box>
+                  <Paragraph size="small" margin={{ top: "small", bottom: "none" }}>
+                     {project.description}
+                  </Paragraph>
+               </SectionCard>
             </Box>
          </Box>
       </Layer>
@@ -288,10 +276,6 @@ const ProjectsTable = () => {
 
    const onProjectClick = (project) => {
       setSelectedProject(project);
-   };
-
-   const closeLayer = () => {
-      setSelectedProject(null);
    };
 
    return (

@@ -14,7 +14,7 @@ import {
 import { Location, ChatOption, Download } from "grommet-icons";
 import theme from "./theme";
 import { StyledSpan } from "./utils/StyledSpan";
-// import styled from "styled-components";
+import styled from "styled-components";
 import ContactLayer from "./components/ContactLayer";
 import ProjectsTable from "./components/ExperienceDataTable";
 import DarkThemeSwitch from "./components/DarkThemeSwitch";
@@ -28,6 +28,22 @@ import Signature from "./components/Signature";
 import ProjectsSection from "./components/ProjectsSection";
 
 // container styles not needed here
+
+const CtaButton = styled(Button)`
+   border-radius: 999px;
+   padding: 10px 18px;
+   font-weight: 600;
+   letter-spacing: 0.02em;
+   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+   transition:
+      transform 180ms ease,
+      box-shadow 180ms ease;
+
+   &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+   }
+`;
 
 const App = () => {
    const [contactSevan, setContactSevan] = React.useState(false);
@@ -184,19 +200,21 @@ const App = () => {
                            <Box
                               align={isMobile ? "center" : "start"}
                               justify="center"
-                              direction="row"
-                              gap={"small"}
+                              direction={isMobile ? "column" : "row"}
+                              gap="medium"
                               margin={{ vertical: "small" }}
                               fill={false}
                               focusIndicator={false}
+                              wrap
+                              alignSelf={isMobile ? "center" : "start"}
                            >
-                              <Button
+                              <CtaButton
                                  primary
                                  icon={<ChatOption />}
                                  label="let's talk"
                                  href="mailto:sevanplusevans@gmail.com"
                               />
-                              <Button
+                              <CtaButton
                                  label="download resume"
                                  href="/Sevan_Evans_Resume_2-15-26.pdf"
                                  download="SevanE_CV"
