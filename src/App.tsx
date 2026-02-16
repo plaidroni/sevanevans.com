@@ -198,7 +198,7 @@ const App = () => {
                               />
                               <Button
                                  label="download resume"
-                                 href="/Sevan_Evans_CV_NPN.pdf"
+                                 href="/Sevan_Evans_Resume_2-15-26.pdf"
                                  download="SevanE_CV"
                                  icon={<Download />}
                                  color={"software-engineer"}

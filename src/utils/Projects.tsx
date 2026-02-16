@@ -21,12 +21,22 @@ export const projects = [
    {
       name: "NASA Community College Aerospace Scholars",
       url: "",
-      roles: [{ name: "Team MVP", color: { color: "co-founder", opacity: "strong" } }],
+      roles: [{ name: "Voted Team MVP", color: { color: "co-founder", opacity: "strong" } }],
       period: "Jan 2026",
       img: "https://www.nasa.gov/wp-content/uploads/2023/03/edu_ncas_2018_patch_final-1041.png",
-      description: `I recently had the pleasure of participating in NASA - National Aeronautics and Space Administration's Community College Aerospace Scholars Robotics Competition at College of the Desert.
+      description: `I recently had the pleasure of participating in NASA's Community College Aerospace Scholars Robotics Competition at College of the Desert.
 
 The competition was an exceptional lesson in teamwork, adaptability, and systems thinking. As the competition neared its end, the team faced mounting pressure to design a claw with integrated sensors. Our initial design attempted to embed sensors into the claw, but the process took longer than anticipated, and we ran out of time before it could reliably grip objects. Rather than force a failing design, we pivoted to a plow, which required a rapid software update. With a minute left, we adapted the gyroscopic code to flip the targeted heading when an object was sensed and, despite having no time to test, placed the rover on the field for the final run—and thankfully, it worked amazingly. For my technical contributions, soft skills, and collaborative leadership, I was selected by our mentor as team MVP.
+`,
+      techStack: [],
+   },
+   {
+      name: "UNIKE USA",
+      url: "",
+      roles: [{ name: "Consultant", color: { color: "software-engineer", opacity: "strong" } }],
+      period: "Dec 2025 - Present",
+      img: "https://unike.eu/wp-content/uploads/2023/05/unike_video_overlay.jpg",
+      description: `Evaluate and document structured feedback on a series of computational fluid dynamics and engineering simulation software presentations, assessing technical clarity, use-case communication, and accessibility for both academic and industry audiences.
 `,
       techStack: [],
    },
@@ -46,9 +56,9 @@ Communicate complex scientific principles clearly to students of varied experien
       name: "College Of The Desert",
       url: "",
       roles: [{ name: "Physics A.S.", color: { color: "physics-as", opacity: "strong" } }],
-      period: "August 2024 - Expected June 2026",
+      period: "August 2024 - Expected Spring 2027",
       img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/college_of_the_desert_logo%20(1).jpg?alt=media&token=e1a65d94-6796-457d-9dc8-22b94254a870",
-      description: `Physics!`,
+      description: `During my Fall 2025 semester at College of the Desert, I founded and currently serve as President of the Physics Club. We have since grown to nearly 30 active members, have hosted multiple guest speakers from different fields, and organized several astronomy and physics-based field trips. In Spring 2026, we plan to fundraise, design, and engineer a small-scale rocket launch. I aim to inspire our members to pursue STEM and support their professional development by guiding them in creating personal online portfolios and connecting them with resources and school funding opportunities.`,
       techStack: [],
    },
    {
