@@ -66,7 +66,9 @@ const Overlay = styled.div`
    left: 0;
    width: 100%;
    height: 100%;
-   background: rgba(0, 0, 0, 0.8);
+   background: rgba(10, 12, 16, 0.72);
+   backdrop-filter: blur(8px);
+   -webkit-backdrop-filter: blur(8px);
    display: ${({ visible }) => (visible ? "flex" : "none")};
    justify-content: center;
    align-items: center;
@@ -95,6 +97,49 @@ const ImageCountBadge = styled.div`
 const ProjectsContainer = styled.div`
    width: 100%;
    margin: 0 auto;
+`;
+
+const ModalCard = styled(Box)`
+   width: min(920px, 92vw);
+   max-height: 85vh;
+   overflow: hidden;
+   border-radius: 22px;
+   border: 1px solid rgba(255, 255, 255, 0.08);
+   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
+   backdrop-filter: blur(16px);
+   -webkit-backdrop-filter: blur(16px);
+`;
+
+const ModalHeader = styled(Box)`
+   padding: 20px 24px 12px 24px;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+`;
+
+const ModalBody = styled(Box)`
+   padding: 20px 24px 24px 24px;
+   gap: 16px;
+`;
+
+const ModalImage = styled.img`
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 16px;
+`;
+
+const Thumb = styled.button`
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   background: transparent;
+   padding: 0;
+   border-radius: 10px;
+   overflow: hidden;
+   cursor: pointer;
+   transition: transform 140ms ease, border-color 140ms ease;
+
+   &:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.35);
+   }
 `;
 
 function ProjectsSection({ isMobile }: { isMobile: boolean }) {
@@ -334,87 +379,88 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
          {/* Project Details Modal */}
          <Overlay visible={!!selectedProject} onClick={closeDetails}>
             {selectedProject && (
-               <Box
-                  width={{ max: "920px" }}
-                  style={{ maxWidth: "92vw", maxHeight: "85vh", overflow: "auto" }}
-                  round="medium"
-                  pad="medium"
+               <ModalCard
                   background="background-front"
                   onClick={(e: any) => e.stopPropagation()}
-                  gap="small"
                >
-                  <Box direction="row" justify="between" align="center">
-                     <Heading level={3} margin="none">
-                        {selectedProject.name}
-                     </Heading>
+                  <ModalHeader direction="row" justify="between" align="center">
+                     <Box gap="xsmall">
+                        <Heading level={3} margin="none">
+                           {selectedProject.name}
+                        </Heading>
+                        {selectedProject.summary && (
+                           <Text style={{ opacity: 0.72 }}>{selectedProject.summary}</Text>
+                        )}
+                     </Box>
                      <Button label="Close" onClick={closeDetails} />
-                  </Box>
-                  <Box>
-                     {/* Simple carousel: use first image as main, thumbnails below if multiple */}
-                     <Box height="medium" overflow="hidden" round="small">
-                        <img
+                  </ModalHeader>
+                  <ModalBody>
+                     <Box height={{ min: "240px", max: "380px" }}>
+                        <ModalImage
                            src={currentDetailImage || selectedProject.images[0]}
                            alt={`${selectedProject.name} detail`}
-                           style={{ width: "100%", height: "100%", objectFit: "cover" }}
                         />
                      </Box>
                      {selectedProject.images.length > 1 && (
-                        <Box direction="row" gap="xsmall" margin={{ top: "xsmall" }} wrap>
+                        <Box direction="row" gap="xsmall" wrap>
                            {selectedProject.images.map((img: string, idx: number) => (
-                              <img
+                              <Thumb
                                  key={img}
-                                 src={img}
-                                 alt={`${selectedProject.name} ${idx}`}
-                                 style={{
-                                    width: 80,
-                                    height: 60,
-                                    objectFit: "cover",
-                                    borderRadius: 6,
-                                    cursor: "pointer",
-                                 }}
                                  onClick={() => setCurrentDetailImage(img)}
-                              />
+                                 style={{
+                                    borderColor:
+                                       currentDetailImage === img
+                                          ? "rgba(255, 255, 255, 0.6)"
+                                          : "rgba(255, 255, 255, 0.12)",
+                                 }}
+                              >
+                                 <img
+                                    src={img}
+                                    alt={`${selectedProject.name} ${idx}`}
+                                    style={{ width: 88, height: 64, objectFit: "cover" }}
+                                 />
+                              </Thumb>
                            ))}
                         </Box>
                      )}
-                  </Box>
-                  <Box gap="small">
-                     <Box direction="row" gap="xsmall" wrap>
-                        {selectedProject.techStack.map((item: any) => (
-                           <TechIcon
-                              key={item.name}
-                              isGolden={item.name === "ThreeJs" || item.name === "Express"}
-                              isFiltered={false}
-                           >
-                              {item.icon}
-                           </TechIcon>
-                        ))}
+                     <Box gap="small">
+                        <Box direction="row" gap="xsmall" wrap>
+                           {selectedProject.techStack.map((item: any) => (
+                              <TechIcon
+                                 key={item.name}
+                                 isGolden={item.name === "ThreeJs" || item.name === "Express"}
+                                 isFiltered={false}
+                              >
+                                 {item.icon}
+                              </TechIcon>
+                           ))}
+                        </Box>
+                        <Text>{selectedProject.description}</Text>
+                        <Box direction="row" gap="small" margin={{ top: "xsmall" }}>
+                           {selectedProject.github && (
+                              <Button
+                                 icon={<Git />}
+                                 label="GitHub"
+                                 href={selectedProject.github}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 primary
+                              />
+                           )}
+                           {selectedProject.live && (
+                              <Button
+                                 icon={<LinkIcon />}
+                                 label="Live Demo"
+                                 href={selectedProject.live}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 secondary
+                              />
+                           )}
+                        </Box>
                      </Box>
-                     <Text>{selectedProject.description}</Text>
-                     <Box direction="row" gap="small" margin={{ top: "xsmall" }}>
-                        {selectedProject.github && (
-                           <Button
-                              icon={<Git />}
-                              label="GitHub"
-                              href={selectedProject.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              primary
-                           />
-                        )}
-                        {selectedProject.live && (
-                           <Button
-                              icon={<LinkIcon />}
-                              label="Live Demo"
-                              href={selectedProject.live}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              secondary
-                           />
-                        )}
-                     </Box>
-                  </Box>
-               </Box>
+                  </ModalBody>
+               </ModalCard>
             )}
          </Overlay>
 

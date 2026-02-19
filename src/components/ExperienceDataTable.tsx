@@ -67,12 +67,30 @@ const SectionTitle = styled(Text)`
    font-weight: 600;
 `;
 
+const ClickableRow = styled(Box)`
+   cursor: pointer;
+   transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      background 160ms ease;
+
+   &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+   }
+
+   &:active {
+      transform: translateY(0);
+   }
+`;
+
 const ProjectBox = ({ project, onClick }) => {
    const { isMobile } = useMediaQuery();
    const mobileGap = isMobile ? "medium" : "small";
    const mobileColor = isMobile ? "border" : "background";
    return (
-      <Box
+      <ClickableRow
          align="start"
          justify="between"
          wrap
@@ -122,7 +140,7 @@ const ProjectBox = ({ project, onClick }) => {
                </Box>
             </Box>
          )}
-      </Box>
+      </ClickableRow>
    );
 };
 
@@ -279,7 +297,7 @@ const ProjectsTable = () => {
    };
 
    return (
-      <Box pad="medium" flex="grow">
+      <Box flex="grow">
          {projects.map((project, index) => (
             <ProjectBox key={index} project={project} onClick={onProjectClick} />
          ))}

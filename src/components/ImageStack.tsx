@@ -52,8 +52,8 @@ const ImageStack = ({ images, boxRef }) => {
       return (
          <StyledImageStack
             key={index}
-            leftper={isMobile ? "5" : "45"}
-            topper={isMobile ? "50" : "55"}
+            leftper={isMobile ? "6" : "12"}
+            topper={isMobile ? "34" : "36"}
             src={imgSrc}
             style={{ transform: transformImage }}
          />

@@ -1,0 +1,26 @@
+.experience-grid {
+   width: 100%;
+}
+
+.experience-grid__table {
+   border-radius: 12px;
+   overflow: hidden;
+}
+
+.experience-grid__table .ag-root-wrapper {
+   border-radius: 12px;
+}
+
+.experience-grid__table .ag-header {
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+}
+
+.experience-grid__table .ag-row {
+   cursor: pointer;
+}
+
+.experience-grid__table .ag-cell {
+   line-height: 1.4;
+}

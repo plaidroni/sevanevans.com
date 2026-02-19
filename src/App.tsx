@@ -212,6 +212,7 @@ const App = () => {
                                  primary
                                  icon={<ChatOption />}
                                  label="let's talk"
+                                 color="accent-1"
                                  href="mailto:sevanplusevans@gmail.com"
                               />
                               <CtaButton
@@ -263,9 +264,9 @@ const App = () => {
                         >
                            I'm passionate about both physics and software development, which is
                            rivaled only by my love for coffee. I'm currently pursuing an Associate
-                           of Science degree in Physics at College of the Desert, and I have an
-                           strong interest in scientific computing, simulations, and Computational
-                           Fluid Dynamics. I love to solve problems, and build novel things.
+                           of Science degree in Physics at College of the Desert, and have a strong
+                           interest in astronautics, and simulations. I love to solve problems, and
+                           build novel things.
                         </Paragraph>
                      </Box>
                   </Box>
