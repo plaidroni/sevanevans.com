@@ -19,6 +19,37 @@ import {
 
 export const projects = [
    {
+      name: "NASA",
+      url: "https://www.nasa.gov",
+      roles: [{ name: "Internship", color: { color: "software-engineer", opacity: "strong" } }],
+      period: "Aug 2026 - Present",
+      img: "public\\NASA_Wormball_logo.png",
+      description: ``,
+      techStack: [],
+   },
+   {
+      name: "NASA M-STAR @ COD",
+      url: "",
+      roles: [{ name: "Student Researcher", color: { color: "co-founder", opacity: "strong" } }],
+      period: "Nar 2026 - Present",
+      img: "../../public/NASA_Wormball_logo.png",
+      description: `
+`,
+      techStack: [],
+   },
+   {
+      name: "Windtree Education",
+      url: "",
+      roles: [{ name: "Stem Teacher", color: { color: "co-founder", opacity: "strong" } }],
+      period: "Sept 2025 - May 2026",
+      img: "public/windtree_education_logo.jpg",
+      description: `I recently had the pleasure of participating in NASA's Community College Aerospace Scholars Robotics Competition at College of the Desert.
+
+The competition was an exceptional lesson in teamwork, adaptability, and systems thinking. As the competition neared its end, the team faced mounting pressure to design a claw with integrated sensors. Our initial design attempted to embed sensors into the claw, but the process took longer than anticipated, and we ran out of time before it could reliably grip objects. Rather than force a failing design, we pivoted to a plow, which required a rapid software update. With a minute left, we adapted the gyroscopic code to flip the targeted heading when an object was sensed and, despite having no time to test, placed the rover on the field for the final run—and thankfully, it worked amazingly. For my technical contributions, soft skills, and collaborative leadership, I was selected by our mentor as team MVP.
+`,
+      techStack: [],
+   },
+   {
       name: "NASA Community College Aerospace Scholars",
       url: "",
       roles: [{ name: "Voted Team MVP", color: { color: "co-founder", opacity: "strong" } }],
@@ -57,7 +88,7 @@ Communicate complex scientific principles clearly to students of varied experien
       url: "",
       roles: [{ name: "Physics A.S.", color: { color: "physics-as", opacity: "strong" } }],
       period: "August 2024 - Expected Spring 2027",
-      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/college_of_the_desert_logo%20(1).jpg?alt=media&token=e1a65d94-6796-457d-9dc8-22b94254a870",
+      img: "public\\COD.jpg",
       description: `During my Fall 2025 semester at College of the Desert, I founded and currently serve as President of the Physics Club. We have since grown to nearly 30 active members, have hosted multiple guest speakers from different fields, and organized several astronomy and physics-based field trips. In Spring 2026, we plan to fundraise, design, and engineer a small-scale rocket launch. I aim to inspire our members to pursue STEM and support their professional development by guiding them in creating personal online portfolios and connecting them with resources and school funding opportunities.`,
       techStack: [],
    },
@@ -77,7 +108,7 @@ Communicate complex scientific principles clearly to students of varied experien
          { name: "XCode", icon: <XCode /> },
          { name: "AndroidStudio", icon: <AndroidStudio /> },
       ],
-      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2Fimageedit_4_3824293816.png?alt=media&token=5dae8ad5-30e3-47f3-8198-6c677ca5b07c",
+      img: "public/tigase.png",
       description: `I am currently excelling in the creation of multi-platform applications using Kotlin and Swift for platforms including Android, iOS, MacOS, and Windows. My strengths lie in adapting swiftly to emerging technologies and grasping new concepts at a rapid pace. I have been working in close collaboration with graphic designers, which has empowered us to produce eye-catching illustrations. Furthermore, my work extends to the design of visual layout mockups, utilizing tools such as Adobe Photoshop and Illustrator. Notably, I am deeply involved in creating and overhauling application user experiences to align with modern standards, thereby successfully attracting new audiences.`,
    },
    {
@@ -93,7 +124,7 @@ Communicate complex scientific principles clearly to students of varied experien
          { name: "CSS", icon: <CSS /> },
          { name: "React", icon: <ReactIcon /> },
       ],
-      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2F1631314671583.jpg?alt=media&token=afb5fa5f-2776-4a02-9053-61c2b79498aa",
+      img: "public/quick_draw.jpg",
       description: ``,
    },
    {
@@ -147,7 +178,7 @@ Communicate complex scientific principles clearly to students of varied experien
          { name: "XCode", icon: <XCode /> },
          { name: "AndroidStudio", icon: <AndroidStudio /> },
       ],
-      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2Fimageedit_10_8089454363.png?alt=media&token=ec370426-a6ef-4e8b-82e5-9a43bd845691",
+      img: "public/palm-desert-high.png",
       description: `During the PDHS Official School Application project, I developed crucial skills in cooperative problem-solving, communication, and rapid software development. As a collaborator, I contributed to a platform impacting students, teachers, and staff daily. Our challenge was maintaining consistent communication across the app's facets, which we overcame with modern development tools and a dedicated approach. This experience emphasized the importance of collaboration, precision, and user-centric design in real-world software development.`,
    },
 
@@ -161,19 +192,5 @@ Communicate complex scientific principles clearly to students of varied experien
       description: `I had the thrilling experience of being part of the winning team at the 2019 RSPC Hackathon, a fast-paced 2-hour competition that pushed our abilities to their limits. We chose Java, a language we were confident and skilled in to do the competition in.
 
        The challenge was not just in coding, but in developing an innovative solution within a very limited time frame. Despite the pressures of time, we successfully solved all problems set in front of us with flying colors. Our win was not just a testament to our technical abilities in Java, but also our team coordination, quick decision-making, and capacity to innovate under pressure.`,
-   },
-   {
-      name: "Desert Art Academy",
-      url: "",
-      roles: [
-         {
-            name: "Software Engineer",
-            color: { color: "software-engineer", opacity: "strong" },
-         },
-      ],
-      period: "2018",
-      techStack: [{ name: "Java", icon: <Java /> }],
-      img: "https://firebasestorage.googleapis.com/v0/b/bodymx-80bc1.appspot.com/o/sevanportfolio%2Fdownload%20(4).jpg?alt=media&token=61834de7-4e3f-4ca7-b538-114a612edc8c",
-      description: ``,
    },
 ];
