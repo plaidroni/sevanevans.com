@@ -20,7 +20,7 @@ import {
 export const projects = [
    {
       name: "NASA",
-      url: "https://www.nasa.gov",
+      url: "nasa.gov",
       roles: [{ name: "Internship", color: { color: "software-engineer", opacity: "strong" } }],
       period: "Aug 2026 - Present",
       img: "https://raw.githubusercontent.com/plaidroni/sevanevans.com/refs/heads/master/public/NASA_Wormball_logo.png",
