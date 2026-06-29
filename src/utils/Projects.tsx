@@ -37,18 +37,7 @@ export const projects = [
 `,
       techStack: [],
    },
-   {
-      name: "Windtree Education",
-      url: "",
-      roles: [{ name: "Stem Teacher", color: { color: "co-founder", opacity: "strong" } }],
-      period: "Sept 2025 - May 2026",
-      img: "https://raw.githubusercontent.com/plaidroni/sevanevans.com/refs/heads/master/public/windtree_education_logo.jpg",
-      description: `I recently had the pleasure of participating in NASA's Community College Aerospace Scholars Robotics Competition at College of the Desert.
 
-The competition was an exceptional lesson in teamwork, adaptability, and systems thinking. As the competition neared its end, the team faced mounting pressure to design a claw with integrated sensors. Our initial design attempted to embed sensors into the claw, but the process took longer than anticipated, and we ran out of time before it could reliably grip objects. Rather than force a failing design, we pivoted to a plow, which required a rapid software update. With a minute left, we adapted the gyroscopic code to flip the targeted heading when an object was sensed and, despite having no time to test, placed the rover on the field for the final run—and thankfully, it worked amazingly. For my technical contributions, soft skills, and collaborative leadership, I was selected by our mentor as team MVP.
-`,
-      techStack: [],
-   },
    {
       name: "NASA Community College Aerospace Scholars",
       url: "",
