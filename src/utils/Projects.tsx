@@ -22,7 +22,7 @@ export const projects = [
       name: "NASA",
       url: "nasa.gov",
       roles: [{ name: "Internship", color: { color: "software-engineer", opacity: "strong" } }],
-      period: "Aug 2026 - Present",
+      period: "Incoming Fall 2026",
       img: "https://raw.githubusercontent.com/plaidroni/sevanevans.com/refs/heads/master/public/NASA_Wormball_logo.png",
       description: ``,
       techStack: [],
