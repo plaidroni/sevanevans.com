@@ -65,7 +65,7 @@ The competition was an exceptional lesson in teamwork, adaptability, and systems
       name: "UNIKE USA",
       url: "",
       roles: [{ name: "Consultant", color: { color: "software-engineer", opacity: "strong" } }],
-      period: "Dec 2025 - Present",
+      period: "Dec 2025 - Feb 2025",
       img: "https://unike.eu/wp-content/uploads/2023/05/unike_video_overlay.jpg",
       description: `Evaluate and document structured feedback on a series of computational fluid dynamics and engineering simulation software presentations, assessing technical clarity, use-case communication, and accessibility for both academic and industry audiences.
 `,
@@ -75,7 +75,7 @@ The competition was an exceptional lesson in teamwork, adaptability, and systems
       name: "Windtree Education",
       url: "",
       roles: [{ name: "STEM Teacher", color: { color: "software-engineer", opacity: "strong" } }],
-      period: "Sept 2025 - Present",
+      period: "Sept 2025 - May 2026",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbYkiacbF59c8bXU9mj_HrT7oDdIu2QMYMMA&s",
       description: `Introduce K–12 students to foundational engineering concepts using hands-on demonstrations and simplified physics experiments.
       
