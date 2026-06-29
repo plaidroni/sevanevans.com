@@ -217,7 +217,7 @@ const App = () => {
                               />
                               <CtaButton
                                  label="download resume"
-                                 href="/Sevan_Evans_CV_6.28.26.pdf"
+                                 href="/Sevan_Evans_CV_6.29.26.pdf"
                                  download="SevanE_CV"
                                  icon={<Download />}
                                  color={"software-engineer"}
