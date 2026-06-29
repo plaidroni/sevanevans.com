@@ -31,7 +31,7 @@ export const projects = [
       name: "NASA M-STAR @ COD",
       url: "",
       roles: [{ name: "Student Researcher", color: { color: "co-founder", opacity: "strong" } }],
-      period: "Nar 2026 - Present",
+      period: "Mar 2026 - Present",
       img: "https://raw.githubusercontent.com/plaidroni/sevanevans.com/refs/heads/master/public/NASA_Wormball_logo.png",
       description: `
 `,
