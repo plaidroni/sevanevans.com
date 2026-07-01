@@ -22,12 +22,20 @@ const ProjectHero = styled.div`
    position: relative;
    width: 100%;
    aspect-ratio: 16 / 9;
-   min-height: 260px;
-   border-radius: 24px;
+   min-height: 280px;
+   border-radius: 28px;
    overflow: hidden;
    cursor: pointer;
-   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-   margin: 1.25rem 0 2rem 0;
+   box-shadow:
+      0 18px 50px rgba(0, 0, 0, 0.14),
+      0 2px 0 rgba(255, 255, 255, 0.04) inset;
+   border: 1px solid rgba(255, 255, 255, 0.08);
+   flex: 0 0 auto;
+
+   @media (max-width: 700px) {
+      min-height: 240px;
+      border-radius: 22px;
+   }
 `;
 
 const HeroImage = styled.img`
@@ -50,7 +58,7 @@ const HeroContent = styled.div`
    left: 0;
    right: 0;
    bottom: 0;
-   padding: 1rem 1.25rem 1.25rem 1.25rem;
+   padding: 1.1rem 1.2rem 1.2rem 1.2rem;
    color: white;
    display: flex;
    flex-direction: column;
@@ -60,19 +68,18 @@ const HeroContent = styled.div`
 // Removed older full-bleed/horizontal scroller styles in favor of hero cards
 
 // gallery components removed in favor of hero-style card
-const Overlay = styled.div`
+const Overlay = styled.div<{ $visible: boolean }>`
    position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
+   inset: 0;
    background: rgba(10, 12, 16, 0.72);
    backdrop-filter: blur(8px);
    -webkit-backdrop-filter: blur(8px);
-   display: ${({ visible }) => (visible ? "flex" : "none")};
+   display: ${({ $visible }) => ($visible ? "flex" : "none")};
    justify-content: center;
-   align-items: center;
+   align-items: flex-start;
+   padding: clamp(0.75rem, 2vw, 1.5rem);
    z-index: 999;
+   overflow-y: auto;
 `;
 
 // FullImage removed (legacy)
@@ -97,27 +104,75 @@ const ImageCountBadge = styled.div`
 const ProjectsContainer = styled.div`
    width: 100%;
    margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: 1.1rem;
 `;
 
 const ModalCard = styled(Box)`
-   width: min(920px, 92vw);
-   max-height: 85vh;
+   width: min(960px, calc(100vw - 2rem));
+   max-height: min(88vh, 920px);
    overflow: hidden;
-   border-radius: 22px;
-   border: 1px solid rgba(255, 255, 255, 0.08);
-   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
+   border-radius: 26px;
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   box-shadow:
+      0 28px 70px rgba(0, 0, 0, 0.45),
+      0 1px 0 rgba(255, 255, 255, 0.06) inset;
    backdrop-filter: blur(16px);
    -webkit-backdrop-filter: blur(16px);
+
+   @media (max-width: 700px) {
+      width: calc(100vw - 1rem);
+      max-height: calc(100vh - 1rem);
+      border-radius: 20px;
+   }
 `;
 
 const ModalHeader = styled(Box)`
-   padding: 20px 24px 12px 24px;
+   padding: clamp(1rem, 2.2vw, 1.5rem) clamp(1rem, 2.2vw, 1.5rem) 0.9rem;
    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+   flex-shrink: 0;
 `;
 
 const ModalBody = styled(Box)`
-   padding: 20px 24px 24px 24px;
-   gap: 16px;
+   padding: clamp(1rem, 2.2vw, 1.5rem);
+   gap: 1rem;
+   overflow-y: auto;
+`;
+
+const ModalLayout = styled.div`
+   display: grid;
+   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+   gap: 1.25rem;
+   align-items: start;
+
+   @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+   }
+`;
+
+const ModalMediaColumn = styled.div`
+   display: flex;
+   flex-direction: column;
+   gap: 0.85rem;
+   min-width: 0;
+`;
+
+const ModalDetailsColumn = styled.div`
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   min-width: 0;
+`;
+
+const ModalImageShell = styled.div`
+   width: 100%;
+   aspect-ratio: 16 / 10;
+   min-height: 220px;
+   border-radius: 18px;
+   overflow: hidden;
+   background: rgba(255, 255, 255, 0.04);
 `;
 
 const ModalImage = styled.img`
@@ -139,6 +194,129 @@ const Thumb = styled.button`
    &:hover {
       transform: translateY(-2px);
       border-color: rgba(255, 255, 255, 0.35);
+   }
+
+   img {
+      display: block;
+   }
+`;
+
+const ProjectLinkRow = styled(Box)`
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 0.75rem;
+
+   @media (max-width: 700px) {
+      width: 100%;
+   }
+`;
+
+const HeroActionRow = styled(Box)`
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 0.5rem;
+`;
+
+const GlassActionButton = styled(Button)<{ $compact?: boolean }>`
+   border-radius: 999px;
+   padding: ${({ $compact }) => ($compact ? "0.45rem 0.7rem" : "0.6rem 0.95rem")};
+   font-weight: 600;
+   letter-spacing: 0.01em;
+   color: #f8fafc;
+   background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08));
+   border: 1px solid rgba(255, 255, 255, 0.18);
+   box-shadow:
+      0 10px 24px rgba(0, 0, 0, 0.18),
+      0 1px 0 rgba(255, 255, 255, 0.08) inset;
+   backdrop-filter: blur(14px);
+   -webkit-backdrop-filter: blur(14px);
+   transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      background 160ms ease,
+      border-color 160ms ease;
+   min-width: 0;
+
+   &:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.11));
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow:
+         0 14px 28px rgba(0, 0, 0, 0.2),
+         0 1px 0 rgba(255, 255, 255, 0.1) inset;
+   }
+
+   &:active {
+      transform: translateY(0);
+   }
+`;
+
+const ModalActionButton = styled(Button)<{ $compact?: boolean; $tone?: "primary" | "secondary" | "neutral" }>`
+   border-radius: 999px;
+   padding: ${({ $compact }) => ($compact ? "0.45rem 0.7rem" : "0.6rem 0.95rem")};
+   font-weight: 600;
+   letter-spacing: 0.01em;
+   color: #ffffff;
+   background: ${({ $tone }) => {
+      if ($tone === "secondary") {
+         return "linear-gradient(180deg, #2F5E9E, #244A7D)";
+      }
+
+      if ($tone === "neutral") {
+         return "linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.10))";
+      }
+
+      return "linear-gradient(180deg, #3E92CC, #2D73A3)";
+   }};
+   border: 1px solid
+      ${({ $tone }) => ($tone === "neutral" ? "rgba(255, 255, 255, 0.18)" : "rgba(255, 255, 255, 0.10)")};
+   box-shadow:
+      0 10px 24px rgba(0, 0, 0, 0.18),
+      0 1px 0 rgba(255, 255, 255, 0.08) inset;
+   backdrop-filter: ${({ $tone }) => ($tone === "neutral" ? "blur(14px)" : "none")};
+   -webkit-backdrop-filter: ${({ $tone }) => ($tone === "neutral" ? "blur(14px)" : "none")};
+   transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      background 160ms ease,
+      border-color 160ms ease;
+   min-width: ${({ $compact }) => ($compact ? "0" : "6.5rem")};
+
+   &:hover {
+      transform: translateY(-1px);
+      background: ${({ $tone }) => {
+         if ($tone === "secondary") {
+            return "linear-gradient(180deg, #3569AD, #2A568D)";
+         }
+
+         if ($tone === "neutral") {
+            return "linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.14))";
+         }
+
+         return "linear-gradient(180deg, #4AA3E0, #326F9B)";
+      }};
+      border-color: rgba(255, 255, 255, 0.24);
+      box-shadow:
+         0 14px 28px rgba(0, 0, 0, 0.2),
+         0 1px 0 rgba(255, 255, 255, 0.1) inset;
+   }
+
+   &:active {
+      transform: translateY(0);
+   }
+`;
+
+const ActionIconWrap = styled.span<{ $mobile: boolean }>`
+   width: ${({ $mobile }) => ($mobile ? "16px" : "18px")};
+   height: ${({ $mobile }) => ($mobile ? "16px" : "18px")};
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+
+   svg {
+      width: 100%;
+      height: 100%;
+      display: block;
    }
 `;
 
@@ -346,30 +524,32 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
                      ))}
                   </Box>
                   {project.summary && <Text style={{ color: "#f2f2f2" }}>{project.summary}</Text>}
-                  <Box direction="row" gap="small" margin={{ top: "xsmall" }}>
+                  <HeroActionRow direction="row" gap="xsmall" margin={{ top: "xsmall" }}>
                      {project.github && (
-                        <Button
-                           icon={<Git />}
-                           label="GitHub"
+                        <GlassActionButton
+                           icon={<ActionIconWrap $mobile={isMobile}><Git /></ActionIconWrap>}
+                           label={isMobile ? undefined : "GitHub"}
                            href={project.github}
                            target="_blank"
                            rel="noopener noreferrer"
-                           primary
+                           $compact={isMobile}
+                           a11yTitle={`${project.name} GitHub`}
                            onClick={(e: any) => e.stopPropagation()}
                         />
                      )}
                      {project.live && (
-                        <Button
-                           icon={<LinkIcon />}
-                           label="Live Demo"
+                        <GlassActionButton
+                           icon={<ActionIconWrap $mobile={isMobile}><LinkIcon /></ActionIconWrap>}
+                           label={isMobile ? undefined : "Live Demo"}
                            href={project.live}
                            target="_blank"
                            rel="noopener noreferrer"
-                           secondary
+                           $compact={isMobile}
+                           a11yTitle={`${project.name} live demo`}
                            onClick={(e: any) => e.stopPropagation()}
                         />
                      )}
-                  </Box>
+                  </HeroActionRow>
                </HeroContent>
             </ProjectHero>
          ))}
@@ -377,13 +557,14 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
          {/* legacy image modal removed */}
 
          {/* Project Details Modal */}
-         <Overlay visible={!!selectedProject} onClick={closeDetails}>
+         <Overlay $visible={!!selectedProject} onClick={closeDetails}>
             {selectedProject && (
                <ModalCard
                   background="background-front"
                   onClick={(e: any) => e.stopPropagation()}
+                  elevation="none"
                >
-                  <ModalHeader direction="row" justify="between" align="center">
+                  <ModalHeader direction="row" justify="between" align="start" gap="medium">
                      <Box gap="xsmall">
                         <Heading level={3} margin="none">
                            {selectedProject.name}
@@ -392,73 +573,86 @@ function ProjectsSection({ isMobile }: { isMobile: boolean }) {
                            <Text style={{ opacity: 0.72 }}>{selectedProject.summary}</Text>
                         )}
                      </Box>
-                     <Button label="Close" onClick={closeDetails} />
+                     <ModalActionButton
+                        label="Close"
+                        onClick={closeDetails}
+                        $compact={false}
+                        $tone="primary"
+                        aria-label="Close project details"
+                     />
                   </ModalHeader>
                   <ModalBody>
-                     <Box height={{ min: "240px", max: "380px" }}>
-                        <ModalImage
-                           src={currentDetailImage || selectedProject.images[0]}
-                           alt={`${selectedProject.name} detail`}
-                        />
-                     </Box>
-                     {selectedProject.images.length > 1 && (
-                        <Box direction="row" gap="xsmall" wrap>
-                           {selectedProject.images.map((img: string, idx: number) => (
-                              <Thumb
-                                 key={img}
-                                 onClick={() => setCurrentDetailImage(img)}
-                                 style={{
-                                    borderColor:
-                                       currentDetailImage === img
-                                          ? "rgba(255, 255, 255, 0.6)"
-                                          : "rgba(255, 255, 255, 0.12)",
-                                 }}
-                              >
-                                 <img
-                                    src={img}
-                                    alt={`${selectedProject.name} ${idx}`}
-                                    style={{ width: 88, height: 64, objectFit: "cover" }}
+                     <ModalLayout>
+                        <ModalMediaColumn>
+                           <ModalImageShell>
+                              <ModalImage
+                                 src={currentDetailImage || selectedProject.images[0]}
+                                 alt={`${selectedProject.name} detail`}
+                              />
+                           </ModalImageShell>
+                           {selectedProject.images.length > 1 && (
+                              <Box direction="row" gap="xsmall" wrap>
+                                 {selectedProject.images.map((img: string, idx: number) => (
+                                    <Thumb
+                                       key={img}
+                                       onClick={() => setCurrentDetailImage(img)}
+                                       style={{
+                                          borderColor:
+                                             currentDetailImage === img
+                                                ? "rgba(255, 255, 255, 0.6)"
+                                                : "rgba(255, 255, 255, 0.12)",
+                                       }}
+                                    >
+                                       <img
+                                          src={img}
+                                          alt={`${selectedProject.name} ${idx}`}
+                                          style={{ width: 88, height: 64, objectFit: "cover" }}
+                                       />
+                                    </Thumb>
+                                 ))}
+                              </Box>
+                           )}
+                        </ModalMediaColumn>
+
+                        <ModalDetailsColumn>
+                           <Box direction="row" gap="xsmall" wrap>
+                              {selectedProject.techStack.map((item: any) => (
+                                 <TechIcon
+                                    key={item.name}
+                                    isGolden={item.name === "ThreeJs" || item.name === "Express"}
+                                    isFiltered={false}
+                                 >
+                                    {item.icon}
+                                 </TechIcon>
+                              ))}
+                           </Box>
+                           <Text>{selectedProject.description}</Text>
+                           <ProjectLinkRow direction="row" margin={{ top: "xsmall" }}>
+                              {selectedProject.github && (
+                                 <ModalActionButton
+                                    icon={<Git />}
+                                    label="GitHub"
+                                    href={selectedProject.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    $compact={false}
+                                    $tone="primary"
                                  />
-                              </Thumb>
-                           ))}
-                        </Box>
-                     )}
-                     <Box gap="small">
-                        <Box direction="row" gap="xsmall" wrap>
-                           {selectedProject.techStack.map((item: any) => (
-                              <TechIcon
-                                 key={item.name}
-                                 isGolden={item.name === "ThreeJs" || item.name === "Express"}
-                                 isFiltered={false}
-                              >
-                                 {item.icon}
-                              </TechIcon>
-                           ))}
-                        </Box>
-                        <Text>{selectedProject.description}</Text>
-                        <Box direction="row" gap="small" margin={{ top: "xsmall" }}>
-                           {selectedProject.github && (
-                              <Button
-                                 icon={<Git />}
-                                 label="GitHub"
-                                 href={selectedProject.github}
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                                 primary
-                              />
-                           )}
-                           {selectedProject.live && (
-                              <Button
-                                 icon={<LinkIcon />}
-                                 label="Live Demo"
-                                 href={selectedProject.live}
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                                 secondary
-                              />
-                           )}
-                        </Box>
-                     </Box>
+                              )}
+                              {selectedProject.live && (
+                                 <ModalActionButton
+                                    icon={<LinkIcon />}
+                                    label="Live Demo"
+                                    href={selectedProject.live}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    $compact={false}
+                                    $tone="secondary"
+                                 />
+                              )}
+                           </ProjectLinkRow>
+                        </ModalDetailsColumn>
+                     </ModalLayout>
                   </ModalBody>
                </ModalCard>
             )}

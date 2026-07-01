@@ -262,11 +262,7 @@ const App = () => {
                            color="text-paragraph"
                            style={{ maxWidth: "70ch" }}
                         >
-                           I'm passionate about both physics and software development, which is
-                           rivaled only by my love for coffee. I'm currently pursuing an Associate
-                           of Science degree in Physics at College of the Desert, and have a strong
-                           interest in astronautics, and simulations. I love to solve problems, and
-                           build novel things.
+                           Returning physics student with 4+ years of professional software engineering experience, now focused on aerospace engineering with an emphasis on astronautics, GN&C, computational modeling, and propulsion. Seeking internships with the goal of contributing to crewed spaceflight, planetary exploration and commercial aviation.
                         </Paragraph>
                      </Box>
                   </Box>
